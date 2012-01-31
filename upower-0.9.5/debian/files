@@ -1,0 +1,5 @@
+upower_0.9.15-4_i386.deb admin optional
+upower-doc_0.9.15-4_all.deb doc optional
+libupower-glib1_0.9.15-4_i386.deb libs optional
+libupower-glib-dev_0.9.15-4_i386.deb libdevel optional
+gir1.0-upowerglib-1.0_0.9.15-4_i386.deb introspection optional

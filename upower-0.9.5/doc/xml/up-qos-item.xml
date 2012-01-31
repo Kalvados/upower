@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="UPower-up-qos-item">
+<refmeta>
+<refentrytitle role="top_of_page" id="UPower-up-qos-item.top_of_page">up-qos-item</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  UPOWER Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>up-qos-item</refname>
+<refpurpose>Helper object representing one item of QOS data.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="UPower-up-qos-item.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>typedef             <link linkend="UpQosItemPrivate">UpQosItemPrivate</link>;
+<link linkend="UpQosItem"><returnvalue>UpQosItem</returnvalue></link> *         <link linkend="up-qos-item-new">up_qos_item_new</link>                     (<parameter><type>void</type></parameter>);
+<link linkend="guint"><returnvalue>guint</returnvalue></link>               <link linkend="up-qos-item-get-uid">up_qos_item_get_uid</link>                 (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-qos-item-set-uid">up_qos_item_set_uid</link>                 (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> uid</parameter>);
+<link linkend="guint"><returnvalue>guint</returnvalue></link>               <link linkend="up-qos-item-get-pid">up_qos_item_get_pid</link>                 (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-qos-item-set-pid">up_qos_item_set_pid</link>                 (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> pid</parameter>);
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-qos-item-get-sender">up_qos_item_get_sender</link>              (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-qos-item-set-sender">up_qos_item_set_sender</link>              (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *sender</parameter>);
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-qos-item-get-cmdline">up_qos_item_get_cmdline</link>             (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-qos-item-set-cmdline">up_qos_item_set_cmdline</link>             (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *cmdline</parameter>);
+<link linkend="guint"><returnvalue>guint</returnvalue></link>               <link linkend="up-qos-item-get-cookie">up_qos_item_get_cookie</link>              (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-qos-item-set-cookie">up_qos_item_set_cookie</link>              (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> cookie</parameter>);
+<link linkend="guint64"><returnvalue>guint64</returnvalue></link>             <link linkend="up-qos-item-get-timespec">up_qos_item_get_timespec</link>            (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-qos-item-set-timespec">up_qos_item_set_timespec</link>            (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="guint64"><type>guint64</type></link> timespec</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-qos-item-get-persistent">up_qos_item_get_persistent</link>          (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-qos-item-set-persistent">up_qos_item_set_persistent</link>          (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="gboolean"><type>gboolean</type></link> persistent</parameter>);
+<link linkend="UpQosKind"><returnvalue>UpQosKind</returnvalue></link>           <link linkend="up-qos-item-get-kind">up_qos_item_get_kind</link>                (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-qos-item-set-kind">up_qos_item_set_kind</link>                (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="UpQosKind"><type>UpQosKind</type></link> type</parameter>);
+<link linkend="gint"><returnvalue>gint</returnvalue></link>                <link linkend="up-qos-item-get-value">up_qos_item_get_value</link>               (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-qos-item-set-value">up_qos_item_set_value</link>               (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="gint"><type>gint</type></link> value</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="UPower-up-qos-item.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This object represents one item of data which may be returned from the
+daemon in response to a query.
+</para>
+<para>
+See also: <link linkend="UpDevice"><type>UpDevice</type></link>, <link linkend="UpClient"><type>UpClient</type></link>
+</para>
+</refsect1>
+<refsect1 id="UPower-up-qos-item.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="UpQosItemPrivate" role="typedef">
+<title>UpQosItemPrivate</title>
+<indexterm zone="UpQosItemPrivate"><primary>UpQosItemPrivate</primary></indexterm>
+<programlisting>typedef struct UpQosItemPrivate UpQosItemPrivate;
+</programlisting>
+</refsect2>
+<refsect2 id="up-qos-item-new" role="function" condition="since:0.9.0">
+<title>up_qos_item_new ()</title>
+<indexterm zone="up-qos-item-new" role="0.9.0"><primary>up_qos_item_new</primary></indexterm>
+<programlisting><link linkend="UpQosItem"><returnvalue>UpQosItem</returnvalue></link> *         up_qos_item_new                     (<parameter><type>void</type></parameter>);</programlisting>
+<variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new UpQosItem object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-get-uid" role="function" condition="since:0.9.0">
+<title>up_qos_item_get_uid ()</title>
+<indexterm zone="up-qos-item-get-uid" role="0.9.0"><primary>up_qos_item_get_uid</primary></indexterm>
+<programlisting><link linkend="guint"><returnvalue>guint</returnvalue></link>               up_qos_item_get_uid                 (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);</programlisting>
+<para>
+Gets the item uid.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-set-uid" role="function" condition="since:0.9.0">
+<title>up_qos_item_set_uid ()</title>
+<indexterm zone="up-qos-item-set-uid" role="0.9.0"><primary>up_qos_item_set_uid</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_qos_item_set_uid                 (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> uid</parameter>);</programlisting>
+<para>
+Sets the item uid.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uid</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-get-pid" role="function" condition="since:0.9.0">
+<title>up_qos_item_get_pid ()</title>
+<indexterm zone="up-qos-item-get-pid" role="0.9.0"><primary>up_qos_item_get_pid</primary></indexterm>
+<programlisting><link linkend="guint"><returnvalue>guint</returnvalue></link>               up_qos_item_get_pid                 (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);</programlisting>
+<para>
+Gets the item pid.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-set-pid" role="function" condition="since:0.9.0">
+<title>up_qos_item_set_pid ()</title>
+<indexterm zone="up-qos-item-set-pid" role="0.9.0"><primary>up_qos_item_set_pid</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_qos_item_set_pid                 (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> pid</parameter>);</programlisting>
+<para>
+Sets the item pid.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-get-sender" role="function" condition="since:0.9.0">
+<title>up_qos_item_get_sender ()</title>
+<indexterm zone="up-qos-item-get-sender" role="0.9.0"><primary>up_qos_item_get_sender</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_qos_item_get_sender              (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);</programlisting>
+<para>
+Gets the item sender.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-set-sender" role="function" condition="since:0.9.0">
+<title>up_qos_item_set_sender ()</title>
+<indexterm zone="up-qos-item-set-sender" role="0.9.0"><primary>up_qos_item_set_sender</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_qos_item_set_sender              (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *sender</parameter>);</programlisting>
+<para>
+Sets the item sender.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sender</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-get-cmdline" role="function" condition="since:0.9.0">
+<title>up_qos_item_get_cmdline ()</title>
+<indexterm zone="up-qos-item-get-cmdline" role="0.9.0"><primary>up_qos_item_get_cmdline</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_qos_item_get_cmdline             (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);</programlisting>
+<para>
+Gets the item cmdline.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-set-cmdline" role="function" condition="since:0.9.0">
+<title>up_qos_item_set_cmdline ()</title>
+<indexterm zone="up-qos-item-set-cmdline" role="0.9.0"><primary>up_qos_item_set_cmdline</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_qos_item_set_cmdline             (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *cmdline</parameter>);</programlisting>
+<para>
+Sets the item cmdline.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cmdline</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-get-cookie" role="function" condition="since:0.9.0">
+<title>up_qos_item_get_cookie ()</title>
+<indexterm zone="up-qos-item-get-cookie" role="0.9.0"><primary>up_qos_item_get_cookie</primary></indexterm>
+<programlisting><link linkend="guint"><returnvalue>guint</returnvalue></link>               up_qos_item_get_cookie              (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);</programlisting>
+<para>
+Gets the item cookie.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-set-cookie" role="function" condition="since:0.9.0">
+<title>up_qos_item_set_cookie ()</title>
+<indexterm zone="up-qos-item-set-cookie" role="0.9.0"><primary>up_qos_item_set_cookie</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_qos_item_set_cookie              (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> cookie</parameter>);</programlisting>
+<para>
+Sets the item cookie.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-get-timespec" role="function" condition="since:0.9.0">
+<title>up_qos_item_get_timespec ()</title>
+<indexterm zone="up-qos-item-get-timespec" role="0.9.0"><primary>up_qos_item_get_timespec</primary></indexterm>
+<programlisting><link linkend="guint64"><returnvalue>guint64</returnvalue></link>             up_qos_item_get_timespec            (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);</programlisting>
+<para>
+Gets the item timespec.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-set-timespec" role="function" condition="since:0.9.0">
+<title>up_qos_item_set_timespec ()</title>
+<indexterm zone="up-qos-item-set-timespec" role="0.9.0"><primary>up_qos_item_set_timespec</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_qos_item_set_timespec            (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="guint64"><type>guint64</type></link> timespec</parameter>);</programlisting>
+<para>
+Sets the item timespec.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>timespec</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-get-persistent" role="function" condition="since:0.9.0">
+<title>up_qos_item_get_persistent ()</title>
+<indexterm zone="up-qos-item-get-persistent" role="0.9.0"><primary>up_qos_item_get_persistent</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_qos_item_get_persistent          (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);</programlisting>
+<para>
+Gets the item persistent.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-set-persistent" role="function" condition="since:0.9.0">
+<title>up_qos_item_set_persistent ()</title>
+<indexterm zone="up-qos-item-set-persistent" role="0.9.0"><primary>up_qos_item_set_persistent</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_qos_item_set_persistent          (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="gboolean"><type>gboolean</type></link> persistent</parameter>);</programlisting>
+<para>
+Sets the item persistent.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>persistent</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-get-kind" role="function" condition="since:0.9.0">
+<title>up_qos_item_get_kind ()</title>
+<indexterm zone="up-qos-item-get-kind" role="0.9.0"><primary>up_qos_item_get_kind</primary></indexterm>
+<programlisting><link linkend="UpQosKind"><returnvalue>UpQosKind</returnvalue></link>           up_qos_item_get_kind                (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);</programlisting>
+<para>
+Gets the item type.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-set-kind" role="function" condition="since:0.9.0">
+<title>up_qos_item_set_kind ()</title>
+<indexterm zone="up-qos-item-set-kind" role="0.9.0"><primary>up_qos_item_set_kind</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_qos_item_set_kind                (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="UpQosKind"><type>UpQosKind</type></link> type</parameter>);</programlisting>
+<para>
+Sets the item type.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-get-value" role="function" condition="since:0.9.0">
+<title>up_qos_item_get_value ()</title>
+<indexterm zone="up-qos-item-get-value" role="0.9.0"><primary>up_qos_item_get_value</primary></indexterm>
+<programlisting><link linkend="gint"><returnvalue>gint</returnvalue></link>                up_qos_item_get_value               (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>);</programlisting>
+<para>
+Gets the item value.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-item-set-value" role="function" condition="since:0.9.0">
+<title>up_qos_item_set_value ()</title>
+<indexterm zone="up-qos-item-set-value" role="0.9.0"><primary>up_qos_item_set_value</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_qos_item_set_value               (<parameter><link linkend="UpQosItem"><type>UpQosItem</type></link> *qos_item</parameter>,
+                                                         <parameter><link linkend="gint"><type>gint</type></link> value</parameter>);</programlisting>
+<para>
+Sets the item value.
+</para><variablelist role="params">
+<varlistentry><term><parameter>qos_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpQosItem"><type>UpQosItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+
+</refsect1>
+
+</refentry>

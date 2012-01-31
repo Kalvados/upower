@@ -1,0 +1,851 @@
+<MACRO>
+<NAME>UP_TYPE_CLIENT</NAME>
+#define UP_TYPE_CLIENT			(up_client_get_type ())
+</MACRO>
+<MACRO>
+<NAME>UP_CLIENT</NAME>
+#define UP_CLIENT(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), UP_TYPE_CLIENT, UpClient))
+</MACRO>
+<MACRO>
+<NAME>UP_CLIENT_CLASS</NAME>
+#define UP_CLIENT_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), UP_TYPE_CLIENT, UpClientClass))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_CLIENT</NAME>
+#define UP_IS_CLIENT(o)			(G_TYPE_CHECK_INSTANCE_TYPE ((o), UP_TYPE_CLIENT))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_CLIENT_CLASS</NAME>
+#define UP_IS_CLIENT_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE ((k), UP_TYPE_CLIENT))
+</MACRO>
+<MACRO>
+<NAME>UP_CLIENT_GET_CLASS</NAME>
+#define UP_CLIENT_GET_CLASS(o)		(G_TYPE_INSTANCE_GET_CLASS ((o), UP_TYPE_CLIENT, UpClientClass))
+</MACRO>
+<MACRO>
+<NAME>UP_CLIENT_ERROR</NAME>
+#define UP_CLIENT_ERROR			(up_client_error_quark ())
+</MACRO>
+<MACRO>
+<NAME>UP_CLIENT_TYPE_ERROR</NAME>
+#define UP_CLIENT_TYPE_ERROR		(up_client_error_get_type ())
+</MACRO>
+<STRUCT>
+<NAME>UpClientPrivate</NAME>
+</STRUCT>
+<USER_FUNCTION>
+<NAME>device_added</NAME>
+<RETURNS>void </RETURNS>
+UpClient		*client,
+							 UpDevice		*device
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>device_changed</NAME>
+<RETURNS>void </RETURNS>
+UpClient		*client,
+							 UpDevice		*device
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>device_removed</NAME>
+<RETURNS>void </RETURNS>
+UpClient		*client,
+							 UpDevice		*device
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>changed</NAME>
+<RETURNS>void </RETURNS>
+UpClient		*client
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_client_reserved1</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_client_reserved2</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_client_reserved3</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_client_reserved4</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_client_reserved5</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_client_reserved6</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_client_reserved7</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_client_reserved8</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_type</NAME>
+<RETURNS>GType		 </RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_new</NAME>
+<RETURNS>UpClient	*</RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_properties_sync</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_enumerate_devices_sync</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_suspend_sync</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_about_to_sleep_sync</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_hibernate_sync</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_devices</NAME>
+<RETURNS>GPtrArray	*</RETURNS>
+UpClient		*client 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_daemon_version</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpClient		*client 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_can_hibernate</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_lid_is_closed</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_lid_is_present</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_can_suspend</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_on_battery</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_client_get_on_low_battery</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpClient		*client 
+</FUNCTION>
+<MACRO>
+<NAME>UP_MAJOR_VERSION</NAME>
+#define UP_MAJOR_VERSION				(0)
+</MACRO>
+<MACRO>
+<NAME>UP_MINOR_VERSION</NAME>
+#define UP_MINOR_VERSION				(9)
+</MACRO>
+<MACRO>
+<NAME>UP_MICRO_VERSION</NAME>
+#define UP_MICRO_VERSION				(5)
+</MACRO>
+<MACRO>
+<NAME>UP_CHECK_VERSION</NAME>
+#define UP_CHECK_VERSION(major,minor,micro)    \
+    (UP_MAJOR_VERSION > (major) || \
+     (UP_MAJOR_VERSION == (major) && UP_MINOR_VERSION > (minor)) || \
+     (UP_MAJOR_VERSION == (major) && UP_MINOR_VERSION == (minor) && \
+      UP_MICRO_VERSION >= (micro)))
+</MACRO>
+<MACRO>
+<NAME>UP_TYPE_QOS_ITEM</NAME>
+#define UP_TYPE_QOS_ITEM		(up_qos_item_get_type ())
+</MACRO>
+<MACRO>
+<NAME>UP_QOS_ITEM</NAME>
+#define UP_QOS_ITEM(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), UP_TYPE_QOS_ITEM, UpQosItem))
+</MACRO>
+<MACRO>
+<NAME>UP_QOS_ITEM_CLASS</NAME>
+#define UP_QOS_ITEM_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), UP_TYPE_QOS_ITEM, UpQosItemClass))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_QOS_ITEM</NAME>
+#define UP_IS_QOS_ITEM(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), UP_TYPE_QOS_ITEM))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_QOS_ITEM_CLASS</NAME>
+#define UP_IS_QOS_ITEM_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE ((k), UP_TYPE_QOS_ITEM))
+</MACRO>
+<MACRO>
+<NAME>UP_QOS_ITEM_GET_CLASS</NAME>
+#define UP_QOS_ITEM_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), UP_TYPE_QOS_ITEM, UpQosItemClass))
+</MACRO>
+<TYPEDEF>
+<NAME>UpQosItemPrivate</NAME>
+typedef struct UpQosItemPrivate UpQosItemPrivate;
+</TYPEDEF>
+<FUNCTION>
+<NAME>up_qos_item_get_type</NAME>
+<RETURNS>GType		 </RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_new</NAME>
+<RETURNS>UpQosItem	*</RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_get_uid</NAME>
+<RETURNS>guint		 </RETURNS>
+UpQosItem		*qos_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_set_uid</NAME>
+<RETURNS>void		 </RETURNS>
+UpQosItem		*qos_item, guint			 uid 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_get_pid</NAME>
+<RETURNS>guint		 </RETURNS>
+UpQosItem		*qos_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_set_pid</NAME>
+<RETURNS>void		 </RETURNS>
+UpQosItem		*qos_item, guint			 pid 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_get_sender</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpQosItem		*qos_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_set_sender</NAME>
+<RETURNS>void		 </RETURNS>
+UpQosItem		*qos_item, const gchar		*sender 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_get_cmdline</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpQosItem		*qos_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_set_cmdline</NAME>
+<RETURNS>void		 </RETURNS>
+UpQosItem		*qos_item, const gchar		*cmdline 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_get_cookie</NAME>
+<RETURNS>guint		 </RETURNS>
+UpQosItem		*qos_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_set_cookie</NAME>
+<RETURNS>void		 </RETURNS>
+UpQosItem		*qos_item, guint			 cookie 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_get_timespec</NAME>
+<RETURNS>guint64		 </RETURNS>
+UpQosItem		*qos_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_set_timespec</NAME>
+<RETURNS>void		 </RETURNS>
+UpQosItem		*qos_item, guint64		 timespec 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_get_persistent</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpQosItem		*qos_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_set_persistent</NAME>
+<RETURNS>void		 </RETURNS>
+UpQosItem		*qos_item, gboolean		 persistent 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_get_kind</NAME>
+<RETURNS>UpQosKind	 </RETURNS>
+UpQosItem		*qos_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_set_kind</NAME>
+<RETURNS>void		 </RETURNS>
+UpQosItem		*qos_item, UpQosKind		 type 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_get_value</NAME>
+<RETURNS>gint		 </RETURNS>
+UpQosItem		*qos_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_item_set_value</NAME>
+<RETURNS>void		 </RETURNS>
+UpQosItem		*qos_item, gint			 value 
+</FUNCTION>
+<MACRO>
+<NAME>UP_TYPE_STATS_ITEM</NAME>
+#define UP_TYPE_STATS_ITEM		(up_stats_item_get_type ())
+</MACRO>
+<MACRO>
+<NAME>UP_STATS_ITEM</NAME>
+#define UP_STATS_ITEM(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), UP_TYPE_STATS_ITEM, UpStatsItem))
+</MACRO>
+<MACRO>
+<NAME>UP_STATS_ITEM_CLASS</NAME>
+#define UP_STATS_ITEM_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), UP_TYPE_STATS_ITEM, UpStatsItemClass))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_STATS_ITEM</NAME>
+#define UP_IS_STATS_ITEM(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), UP_TYPE_STATS_ITEM))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_STATS_ITEM_CLASS</NAME>
+#define UP_IS_STATS_ITEM_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), UP_TYPE_STATS_ITEM))
+</MACRO>
+<MACRO>
+<NAME>UP_STATS_ITEM_GET_CLASS</NAME>
+#define UP_STATS_ITEM_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), UP_TYPE_STATS_ITEM, UpStatsItemClass))
+</MACRO>
+<TYPEDEF>
+<NAME>UpStatsItemPrivate</NAME>
+typedef struct UpStatsItemPrivate UpStatsItemPrivate;
+</TYPEDEF>
+<FUNCTION>
+<NAME>up_stats_item_get_type</NAME>
+<RETURNS>GType		 </RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_stats_item_new</NAME>
+<RETURNS>UpStatsItem	*</RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_stats_item_get_value</NAME>
+<RETURNS>gdouble		 </RETURNS>
+UpStatsItem		*stats_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_stats_item_set_value</NAME>
+<RETURNS>void		 </RETURNS>
+UpStatsItem		*stats_item, gdouble		 value 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_stats_item_get_accuracy</NAME>
+<RETURNS>gdouble		 </RETURNS>
+UpStatsItem		*stats_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_stats_item_set_accuracy</NAME>
+<RETURNS>void		 </RETURNS>
+UpStatsItem		*stats_item, gdouble		 accuracy 
+</FUNCTION>
+<MACRO>
+<NAME>UP_TYPE_DEVICE</NAME>
+#define UP_TYPE_DEVICE		(up_device_get_type ())
+</MACRO>
+<MACRO>
+<NAME>UP_DEVICE</NAME>
+#define UP_DEVICE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), UP_TYPE_DEVICE, UpDevice))
+</MACRO>
+<MACRO>
+<NAME>UP_DEVICE_CLASS</NAME>
+#define UP_DEVICE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), UP_TYPE_DEVICE, UpDeviceClass))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_DEVICE</NAME>
+#define UP_IS_DEVICE(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), UP_TYPE_DEVICE))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_DEVICE_CLASS</NAME>
+#define UP_IS_DEVICE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), UP_TYPE_DEVICE))
+</MACRO>
+<MACRO>
+<NAME>UP_DEVICE_GET_CLASS</NAME>
+#define UP_DEVICE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), UP_TYPE_DEVICE, UpDeviceClass))
+</MACRO>
+<MACRO>
+<NAME>UP_DEVICE_ERROR</NAME>
+#define UP_DEVICE_ERROR		(up_device_error_quark ())
+</MACRO>
+<MACRO>
+<NAME>UP_DEVICE_TYPE_ERROR</NAME>
+#define UP_DEVICE_TYPE_ERROR	(up_device_error_get_type ())
+</MACRO>
+<STRUCT>
+<NAME>UpDevicePrivate</NAME>
+</STRUCT>
+<USER_FUNCTION>
+<NAME>changed</NAME>
+<RETURNS>void </RETURNS>
+UpDevice		*device,
+							 gpointer		*obj
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_device_reserved1</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_device_reserved2</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_device_reserved3</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_device_reserved4</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_device_reserved5</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_device_reserved6</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_device_reserved7</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>_up_device_reserved8</NAME>
+<RETURNS>void </RETURNS>
+void
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>up_device_get_type</NAME>
+<RETURNS>GType		 </RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_new</NAME>
+<RETURNS>UpDevice	*</RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_to_text</NAME>
+<RETURNS>gchar		*</RETURNS>
+UpDevice		*device 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_refresh_sync</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpDevice		*device, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_set_object_path_sync</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpDevice		*device, const gchar		*object_path, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_get_history_sync</NAME>
+<RETURNS>GPtrArray	*</RETURNS>
+UpDevice		*device, const gchar		*type, guint			 timespec, guint			 resolution, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_get_statistics_sync</NAME>
+<RETURNS>GPtrArray	*</RETURNS>
+UpDevice		*device, const gchar		*type, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_get_object_path</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpDevice		*device 
+</FUNCTION>
+<MACRO>
+<NAME>UP_TYPE_WAKEUP_ITEM</NAME>
+#define UP_TYPE_WAKEUP_ITEM		(up_wakeup_item_get_type ())
+</MACRO>
+<MACRO>
+<NAME>UP_WAKEUP_ITEM</NAME>
+#define UP_WAKEUP_ITEM(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), UP_TYPE_WAKEUP_ITEM, UpWakeupItem))
+</MACRO>
+<MACRO>
+<NAME>UP_WAKEUP_ITEM_CLASS</NAME>
+#define UP_WAKEUP_ITEM_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), UP_TYPE_WAKEUP_ITEM, UpWakeupItemClass))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_WAKEUP_ITEM</NAME>
+#define UP_IS_WAKEUP_ITEM(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), UP_TYPE_WAKEUP_ITEM))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_WAKEUP_ITEM_CLASS</NAME>
+#define UP_IS_WAKEUP_ITEM_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), UP_TYPE_WAKEUP_ITEM))
+</MACRO>
+<MACRO>
+<NAME>UP_WAKEUP_ITEM_GET_CLASS</NAME>
+#define UP_WAKEUP_ITEM_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), UP_TYPE_WAKEUP_ITEM, UpWakeupItemClass))
+</MACRO>
+<TYPEDEF>
+<NAME>UpWakeupItemPrivate</NAME>
+typedef struct UpWakeupItemPrivate UpWakeupItemPrivate;
+</TYPEDEF>
+<FUNCTION>
+<NAME>up_wakeup_item_get_type</NAME>
+<RETURNS>GType		 </RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_new</NAME>
+<RETURNS>UpWakeupItem	*</RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_get_is_userspace</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpWakeupItem		*wakeup_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_set_is_userspace</NAME>
+<RETURNS>void		 </RETURNS>
+UpWakeupItem		*wakeup_item, gboolean		 is_userspace 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_get_id</NAME>
+<RETURNS>guint		 </RETURNS>
+UpWakeupItem		*wakeup_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_set_id</NAME>
+<RETURNS>void		 </RETURNS>
+UpWakeupItem		*wakeup_item, guint			 id 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_get_old</NAME>
+<RETURNS>guint		 </RETURNS>
+UpWakeupItem		*wakeup_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_set_old</NAME>
+<RETURNS>void		 </RETURNS>
+UpWakeupItem		*wakeup_item, guint			 old 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_get_value</NAME>
+<RETURNS>gdouble		 </RETURNS>
+UpWakeupItem		*wakeup_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_set_value</NAME>
+<RETURNS>void		 </RETURNS>
+UpWakeupItem		*wakeup_item, gdouble		 value 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_get_cmdline</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpWakeupItem		*wakeup_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_set_cmdline</NAME>
+<RETURNS>void		 </RETURNS>
+UpWakeupItem		*wakeup_item, const gchar		*cmdline 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_get_details</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpWakeupItem		*wakeup_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeup_item_set_details</NAME>
+<RETURNS>void		 </RETURNS>
+UpWakeupItem		*wakeup_item, const gchar		*details 
+</FUNCTION>
+<ENUM>
+<NAME>UpDeviceKind</NAME>
+typedef enum {
+	UP_DEVICE_KIND_UNKNOWN,
+	UP_DEVICE_KIND_LINE_POWER,
+	UP_DEVICE_KIND_BATTERY,
+	UP_DEVICE_KIND_UPS,
+	UP_DEVICE_KIND_MONITOR,
+	UP_DEVICE_KIND_MOUSE,
+	UP_DEVICE_KIND_KEYBOARD,
+	UP_DEVICE_KIND_PDA,
+	UP_DEVICE_KIND_PHONE,
+	UP_DEVICE_KIND_MEDIA_PLAYER,
+	UP_DEVICE_KIND_TABLET,
+	UP_DEVICE_KIND_COMPUTER,
+	UP_DEVICE_KIND_LAST
+} UpDeviceKind;
+</ENUM>
+<ENUM>
+<NAME>UpDeviceState</NAME>
+typedef enum {
+	UP_DEVICE_STATE_UNKNOWN,
+	UP_DEVICE_STATE_CHARGING,
+	UP_DEVICE_STATE_DISCHARGING,
+	UP_DEVICE_STATE_EMPTY,
+	UP_DEVICE_STATE_FULLY_CHARGED,
+	UP_DEVICE_STATE_PENDING_CHARGE,
+	UP_DEVICE_STATE_PENDING_DISCHARGE,
+	UP_DEVICE_STATE_LAST
+} UpDeviceState;
+</ENUM>
+<ENUM>
+<NAME>UpDeviceTechnology</NAME>
+typedef enum {
+	UP_DEVICE_TECHNOLOGY_UNKNOWN,
+	UP_DEVICE_TECHNOLOGY_LITHIUM_ION,
+	UP_DEVICE_TECHNOLOGY_LITHIUM_POLYMER,
+	UP_DEVICE_TECHNOLOGY_LITHIUM_IRON_PHOSPHATE,
+	UP_DEVICE_TECHNOLOGY_LEAD_ACID,
+	UP_DEVICE_TECHNOLOGY_NICKEL_CADMIUM,
+	UP_DEVICE_TECHNOLOGY_NICKEL_METAL_HYDRIDE,
+	UP_DEVICE_TECHNOLOGY_LAST
+} UpDeviceTechnology;
+</ENUM>
+<ENUM>
+<NAME>UpQosKind</NAME>
+typedef enum {
+	UP_QOS_KIND_UNKNOWN,
+	UP_QOS_KIND_NETWORK,
+	UP_QOS_KIND_CPU_DMA,
+	UP_QOS_KIND_LAST
+} UpQosKind;
+</ENUM>
+<FUNCTION>
+<NAME>up_device_kind_to_string</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpDeviceKind		 type_enum 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_state_to_string</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpDeviceState		 state_enum 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_technology_to_string</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpDeviceTechnology	 technology_enum 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_kind_from_string</NAME>
+<RETURNS>UpDeviceKind	 </RETURNS>
+const gchar		*type 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_state_from_string</NAME>
+<RETURNS>UpDeviceState	 </RETURNS>
+const gchar		*state 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_device_technology_from_string</NAME>
+<RETURNS>UpDeviceTechnology </RETURNS>
+const gchar		*technology 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_kind_to_string</NAME>
+<RETURNS>const gchar	*</RETURNS>
+UpQosKind		 type 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_qos_kind_from_string</NAME>
+<RETURNS>UpQosKind	 </RETURNS>
+const gchar		*type 
+</FUNCTION>
+<MACRO>
+<NAME>UP_TYPE_HISTORY_ITEM</NAME>
+#define UP_TYPE_HISTORY_ITEM		(up_history_item_get_type ())
+</MACRO>
+<MACRO>
+<NAME>UP_HISTORY_ITEM</NAME>
+#define UP_HISTORY_ITEM(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), UP_TYPE_HISTORY_ITEM, UpHistoryItem))
+</MACRO>
+<MACRO>
+<NAME>UP_HISTORY_ITEM_CLASS</NAME>
+#define UP_HISTORY_ITEM_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), UP_TYPE_HISTORY_ITEM, UpHistoryItemClass))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_HISTORY_ITEM</NAME>
+#define UP_IS_HISTORY_ITEM(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), UP_TYPE_HISTORY_ITEM))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_HISTORY_ITEM_CLASS</NAME>
+#define UP_IS_HISTORY_ITEM_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), UP_TYPE_HISTORY_ITEM))
+</MACRO>
+<MACRO>
+<NAME>UP_HISTORY_ITEM_GET_CLASS</NAME>
+#define UP_HISTORY_ITEM_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), UP_TYPE_HISTORY_ITEM, UpHistoryItemClass))
+</MACRO>
+<TYPEDEF>
+<NAME>UpHistoryItemPrivate</NAME>
+typedef struct UpHistoryItemPrivate UpHistoryItemPrivate;
+</TYPEDEF>
+<FUNCTION>
+<NAME>up_history_item_get_type</NAME>
+<RETURNS>GType		 </RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_new</NAME>
+<RETURNS>UpHistoryItem	*</RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_get_value</NAME>
+<RETURNS>gdouble		 </RETURNS>
+UpHistoryItem		*history_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_set_value</NAME>
+<RETURNS>void		 </RETURNS>
+UpHistoryItem		*history_item, gdouble		 value 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_get_time</NAME>
+<RETURNS>guint		 </RETURNS>
+UpHistoryItem		*history_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_set_time</NAME>
+<RETURNS>void		 </RETURNS>
+UpHistoryItem		*history_item, guint			 time 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_set_time_to_present</NAME>
+<RETURNS>void		 </RETURNS>
+UpHistoryItem		*history_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_get_state</NAME>
+<RETURNS>UpDeviceState	 </RETURNS>
+UpHistoryItem		*history_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_set_state</NAME>
+<RETURNS>void		 </RETURNS>
+UpHistoryItem		*history_item, UpDeviceState		 state 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_to_string</NAME>
+<RETURNS>gchar		*</RETURNS>
+UpHistoryItem		*history_item 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_history_item_set_from_string</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpHistoryItem		*history_item, const gchar		*text 
+</FUNCTION>
+<MACRO>
+<NAME>UP_TYPE_WAKEUPS</NAME>
+#define UP_TYPE_WAKEUPS		(up_wakeups_get_type ())
+</MACRO>
+<MACRO>
+<NAME>UP_WAKEUPS</NAME>
+#define UP_WAKEUPS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), UP_TYPE_WAKEUPS, UpWakeups))
+</MACRO>
+<MACRO>
+<NAME>UP_WAKEUPS_CLASS</NAME>
+#define UP_WAKEUPS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), UP_TYPE_WAKEUPS, UpWakeupsClass))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_WAKEUPS</NAME>
+#define UP_IS_WAKEUPS(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), UP_TYPE_WAKEUPS))
+</MACRO>
+<MACRO>
+<NAME>UP_IS_WAKEUPS_CLASS</NAME>
+#define UP_IS_WAKEUPS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), UP_TYPE_WAKEUPS))
+</MACRO>
+<MACRO>
+<NAME>UP_WAKEUPS_GET_CLASS</NAME>
+#define UP_WAKEUPS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), UP_TYPE_WAKEUPS, UpWakeupsClass))
+</MACRO>
+<MACRO>
+<NAME>UP_WAKEUPS_ERROR</NAME>
+#define UP_WAKEUPS_ERROR	(up_wakeups_error_quark ())
+</MACRO>
+<MACRO>
+<NAME>UP_WAKEUPS_TYPE_ERROR</NAME>
+#define UP_WAKEUPS_TYPE_ERROR	(up_wakeups_error_get_type ())
+</MACRO>
+<TYPEDEF>
+<NAME>UpWakeupsPrivate</NAME>
+typedef struct UpWakeupsPrivate UpWakeupsPrivate;
+</TYPEDEF>
+<USER_FUNCTION>
+<NAME>data_changed</NAME>
+<RETURNS>void </RETURNS>
+UpWakeups		*wakeups
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>total_changed</NAME>
+<RETURNS>void </RETURNS>
+UpWakeups		*wakeups,
+							 guint			 value
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>up_wakeups_get_type</NAME>
+<RETURNS>GType		 </RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeups_new</NAME>
+<RETURNS>UpWakeups	*</RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeups_get_total_sync</NAME>
+<RETURNS>guint		 </RETURNS>
+UpWakeups		*wakeups, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeups_get_data_sync</NAME>
+<RETURNS>GPtrArray	*</RETURNS>
+UpWakeups		*wakeups, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeups_get_properties_sync</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpWakeups		*wakeups, GCancellable		*cancellable, GError			**error 
+</FUNCTION>
+<FUNCTION>
+<NAME>up_wakeups_get_has_capability</NAME>
+<RETURNS>gboolean	 </RETURNS>
+UpWakeups		*wakeups 
+</FUNCTION>

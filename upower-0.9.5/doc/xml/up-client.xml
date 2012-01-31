@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="UPower-up-client">
+<refmeta>
+<refentrytitle role="top_of_page" id="UPower-up-client.top_of_page">up-client</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  UPOWER Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>up-client</refname>
+<refpurpose>Main client object for accessing the UPower daemon</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="UPower-up-client.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>#define             <link linkend="UP-CLIENT-ERROR:CAPS">UP_CLIENT_ERROR</link>
+#define             <link linkend="UP-CLIENT-TYPE-ERROR:CAPS">UP_CLIENT_TYPE_ERROR</link>
+                    <link linkend="UpClientPrivate">UpClientPrivate</link>;
+<link linkend="void"><returnvalue>void</returnvalue></link>                (<link linkend="device-added">*device_added</link>)                     (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                (<link linkend="device-changed">*device_changed</link>)                   (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                (<link linkend="device-removed">*device_removed</link>)                   (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                (<link linkend="changed">*changed</link>)                          (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);
+<link linkend="UpClient"><returnvalue>UpClient</returnvalue></link> *          <link linkend="up-client-new">up_client_new</link>                       (<parameter><type>void</type></parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-get-properties-sync">up_client_get_properties_sync</link>       (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-enumerate-devices-sync">up_client_enumerate_devices_sync</link>    (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-suspend-sync">up_client_suspend_sync</link>              (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-about-to-sleep-sync">up_client_about_to_sleep_sync</link>       (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-hibernate-sync">up_client_hibernate_sync</link>            (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link> *         <link linkend="up-client-get-devices">up_client_get_devices</link>               (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-client-get-daemon-version">up_client_get_daemon_version</link>        (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-get-can-hibernate">up_client_get_can_hibernate</link>         (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-get-lid-is-closed">up_client_get_lid_is_closed</link>         (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-get-can-suspend">up_client_get_can_suspend</link>           (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-get-on-battery">up_client_get_on_battery</link>            (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-client-get-on-low-battery">up_client_get_on_low_battery</link>        (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="UPower-up-client.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A helper GObject to use for accessing UPower information, and to be notified
+when it is changed.
+</para>
+<para>
+See also: <link linkend="UpDevice"><type>UpDevice</type></link>
+</para>
+</refsect1>
+<refsect1 id="UPower-up-client.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="UP-CLIENT-ERROR:CAPS" role="macro">
+<title>UP_CLIENT_ERROR</title>
+<indexterm zone="UP-CLIENT-ERROR:CAPS"><primary>UP_CLIENT_ERROR</primary></indexterm>
+<programlisting>#define UP_CLIENT_ERROR			(up_client_error_quark ())
+</programlisting>
+</refsect2>
+<refsect2 id="UP-CLIENT-TYPE-ERROR:CAPS" role="macro">
+<title>UP_CLIENT_TYPE_ERROR</title>
+<indexterm zone="UP-CLIENT-TYPE-ERROR:CAPS"><primary>UP_CLIENT_TYPE_ERROR</primary></indexterm>
+<programlisting>#define UP_CLIENT_TYPE_ERROR		(up_client_error_get_type ())
+</programlisting>
+</refsect2>
+<refsect2 id="UpClientPrivate" role="struct">
+<title>UpClientPrivate</title>
+<indexterm zone="UpClientPrivate"><primary>UpClientPrivate</primary></indexterm>
+<programlisting>typedef struct _UpClientPrivate UpClientPrivate;</programlisting>
+<para>
+Private <link linkend="UpClient"><type>UpClient</type></link> data
+</para></refsect2>
+<refsect2 id="device-added" role="function">
+<title>device_added ()</title>
+<indexterm zone="device-added"><primary>device_added</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                (*device_added)                     (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="device-changed" role="function">
+<title>device_changed ()</title>
+<indexterm zone="device-changed"><primary>device_changed</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                (*device_changed)                   (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="device-removed" role="function">
+<title>device_removed ()</title>
+<indexterm zone="device-removed"><primary>device_removed</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                (*device_removed)                   (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="changed" role="function">
+<title>changed ()</title>
+<indexterm zone="changed"><primary>changed</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                (*changed)                          (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="up-client-new" role="function" condition="since:0.9.0">
+<title>up_client_new ()</title>
+<indexterm zone="up-client-new" role="0.9.0"><primary>up_client_new</primary></indexterm>
+<programlisting><link linkend="UpClient"><returnvalue>UpClient</returnvalue></link> *          up_client_new                       (<parameter><type>void</type></parameter>);</programlisting>
+<para>
+Creates a new <link linkend="UpClient"><type>UpClient</type></link> object.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new UpClient object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-get-properties-sync" role="function" condition="since:0.9.0">
+<title>up_client_get_properties_sync ()</title>
+<indexterm zone="up-client-get-properties-sync" role="0.9.0"><primary>up_client_get_properties_sync</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_get_properties_sync       (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Get all the properties from UPower daemon.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success, else <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-enumerate-devices-sync" role="function" condition="since:0.9.0">
+<title>up_client_enumerate_devices_sync ()</title>
+<indexterm zone="up-client-enumerate-devices-sync" role="0.9.0"><primary>up_client_enumerate_devices_sync</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_enumerate_devices_sync    (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Enumerates all the devices from the daemon.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for success, else <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-suspend-sync" role="function" condition="since:0.9.0">
+<title>up_client_suspend_sync ()</title>
+<indexterm zone="up-client-suspend-sync" role="0.9.0"><primary>up_client_suspend_sync</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_suspend_sync              (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Puts the computer into a low power state, but state is not preserved if the
+power is lost.
+</para>
+<para>
+NOTE: The system is still consuming a small amount of power
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if system suspended okay, FALSE other wise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-about-to-sleep-sync" role="function" condition="since:0.9.1">
+<title>up_client_about_to_sleep_sync ()</title>
+<indexterm zone="up-client-about-to-sleep-sync" role="0.9.1"><primary>up_client_about_to_sleep_sync</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_about_to_sleep_sync       (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Tells UPower that we are soon to reqest either <link linkend="Suspend"><function>Suspend()</function></link> or <link linkend="Hibernate"><function>Hibernate()</function></link>
+and that session and system components should be notified of this.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if system suspended okay, FALSE other wise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.1</para></refsect2>
+<refsect2 id="up-client-hibernate-sync" role="function" condition="since:0.9.0">
+<title>up_client_hibernate_sync ()</title>
+<indexterm zone="up-client-hibernate-sync" role="0.9.0"><primary>up_client_hibernate_sync</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_hibernate_sync            (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Puts the computer into a low power state, where state is preserved if the
+power is lost.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if system suspended okay, FALSE other wise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-get-devices" role="function" condition="since:0.9.0">
+<title>up_client_get_devices ()</title>
+<indexterm zone="up-client-get-devices" role="0.9.0"><primary>up_client_get_devices</primary></indexterm>
+<programlisting><link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link> *         up_client_get_devices               (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);</programlisting>
+<para>
+Get a copy of the device objects.
+You must have called <link linkend="up-client-enumerate-devices-sync"><function>up_client_enumerate_devices_sync()</function></link> before calling this
+function.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an array of <link linkend="UpDevice"><type>UpDevice</type></link> objects, free with <link linkend="g-ptr-array-unref"><function>g_ptr_array_unref()</function></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-get-daemon-version" role="function" condition="since:0.9.0">
+<title>up_client_get_daemon_version ()</title>
+<indexterm zone="up-client-get-daemon-version" role="0.9.0"><primary>up_client_get_daemon_version</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_client_get_daemon_version        (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);</programlisting>
+<para>
+Get UPower daemon version.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> string containing the daemon version, e.g. 008
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-get-can-hibernate" role="function" condition="since:0.9.0">
+<title>up_client_get_can_hibernate ()</title>
+<indexterm zone="up-client-get-can-hibernate" role="0.9.0"><primary>up_client_get_can_hibernate</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_get_can_hibernate         (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);</programlisting>
+<para>
+Get whether the system is able to hibernate.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if system can hibernate, FALSE other wise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-get-lid-is-closed" role="function" condition="since:0.9.0">
+<title>up_client_get_lid_is_closed ()</title>
+<indexterm zone="up-client-get-lid-is-closed" role="0.9.0"><primary>up_client_get_lid_is_closed</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_get_lid_is_closed         (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);</programlisting>
+<para>
+Get whether the laptop lid is closed.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if lid is closed or <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-get-can-suspend" role="function" condition="since:0.9.0">
+<title>up_client_get_can_suspend ()</title>
+<indexterm zone="up-client-get-can-suspend" role="0.9.0"><primary>up_client_get_can_suspend</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_get_can_suspend           (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);</programlisting>
+<para>
+Get whether the system is able to suspend.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if system can suspend, FALSE other wise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-get-on-battery" role="function" condition="since:0.9.0">
+<title>up_client_get_on_battery ()</title>
+<indexterm zone="up-client-get-on-battery" role="0.9.0"><primary>up_client_get_on_battery</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_get_on_battery            (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);</programlisting>
+<para>
+Get whether the system is running on battery power.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if the system is currently running on battery, FALSE other wise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-client-get-on-low-battery" role="function" condition="since:0.9.0">
+<title>up_client_get_on_low_battery ()</title>
+<indexterm zone="up-client-get-on-low-battery" role="0.9.0"><primary>up_client_get_on_low_battery</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_client_get_on_low_battery        (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);</programlisting>
+<para>
+Get whether the system is running on low battery power.
+</para><variablelist role="params">
+<varlistentry><term><parameter>client</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpClient"><type>UpClient</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if the system is currently on low battery power, FALSE other wise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+
+</refsect1>
+
+</refentry>

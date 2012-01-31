@@ -1,0 +1,5 @@
+	../policy/org.freedesktop.upower.policy.in \
+	../policy/org.freedesktop.upower.qos.policy.in \
+	../src/up-main.c \
+	../tools/up-tool.c \
+	../src/egg-debug.c

@@ -1,0 +1,53 @@
+<SIGNAL>
+<NAME>UpClient::changed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+UpClient *upclient
+</SIGNAL>
+
+<SIGNAL>
+<NAME>UpClient::device-added</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+UpClient *upclient
+UpDevice *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>UpClient::device-changed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+UpClient *upclient
+UpDevice *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>UpClient::device-removed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+UpClient *upclient
+UpDevice *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>UpDevice::changed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+UpDevice *updevice
+</SIGNAL>
+
+<SIGNAL>
+<NAME>UpWakeups::data-changed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+UpWakeups *upwakeups
+</SIGNAL>
+
+<SIGNAL>
+<NAME>UpWakeups::total-changed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+UpWakeups *upwakeups
+guint  arg1
+</SIGNAL>
+

@@ -1,0 +1,4 @@
+Tests: upstream-system
+Depends: upower, gir1.2-glib-2.0
+Restrictions: needs-root 
+Features: no-build-needed

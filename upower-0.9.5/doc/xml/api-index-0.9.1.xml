@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="up-client-about-to-sleep-sync"><link linkend="up-client-about-to-sleep-sync">up_client_about_to_sleep_sync</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="up-wakeups-get-data-sync"><link linkend="up-wakeups-get-data-sync">up_wakeups_get_data_sync</link>, function in <link linkend="UPower-up-wakeups">up-wakeups</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeups-get-has-capability"><link linkend="up-wakeups-get-has-capability">up_wakeups_get_has_capability</link>, function in <link linkend="UPower-up-wakeups">up-wakeups</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeups-get-properties-sync"><link linkend="up-wakeups-get-properties-sync">up_wakeups_get_properties_sync</link>, function in <link linkend="UPower-up-wakeups">up-wakeups</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeups-get-total-sync"><link linkend="up-wakeups-get-total-sync">up_wakeups_get_total_sync</link>, function in <link linkend="UPower-up-wakeups">up-wakeups</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeups-new"><link linkend="up-wakeups-new">up_wakeups_new</link>, function in <link linkend="UPower-up-wakeups">up-wakeups</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

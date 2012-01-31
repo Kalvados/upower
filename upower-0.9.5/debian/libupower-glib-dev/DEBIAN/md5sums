@@ -1,0 +1,15 @@
+27bb0f969dca08e91c3185c6a2ad89f5  usr/include/libupower-glib/up-client.h
+77a748fcc1c88081a29e9e24e14cf871  usr/include/libupower-glib/up-device.h
+e83465621cc668065573419cfadfad73  usr/include/libupower-glib/up-history-item.h
+a9a290115b12bfe5f9ff09c951e11700  usr/include/libupower-glib/up-qos-item.h
+d01c8d9c485c62b5a61bd51d21349190  usr/include/libupower-glib/up-stats-item.h
+5d898d0a3e14f7561e0e15177d1c9aec  usr/include/libupower-glib/up-types.h
+b814f618ac2f4d1760fca797fda9ee5e  usr/include/libupower-glib/up-version.h
+33c72b4a4b6a31e039a04760f68f58de  usr/include/libupower-glib/up-wakeup-item.h
+711e55fdbebca79bba6e974d979c94da  usr/include/libupower-glib/up-wakeups.h
+c5d372f0b3e89e25c2cd362ebf139698  usr/include/libupower-glib/upower.h
+bcb69962d51ebf567914e851d0d2d353  usr/lib/libupower-glib.a
+5563461778a8560b84a66824bf81c39d  usr/lib/pkgconfig/upower-glib.pc
+f2bca49124feda1710ac2ae900848de7  usr/share/doc/libupower-glib-dev/changelog.Debian.gz
+eb4d5a44ed62fb1588ac0060d1729d9a  usr/share/doc/libupower-glib-dev/copyright
+94a771349642794396ad6e7f8354d882  usr/share/gir-1.0/UPowerGlib-1.0.gir

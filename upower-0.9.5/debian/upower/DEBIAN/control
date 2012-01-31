@@ -1,0 +1,15 @@
+Package: upower
+Version: 0.9.15-4
+Architecture: i386
+Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
+Installed-Size: 472
+Depends: libc6 (>= 2.3.6-6~), libdbus-1-3 (>= 1.0.2), libdbus-glib-1-2 (>= 0.88), libglib2.0-0 (>= 2.22.0), libgudev-1.0-0 (>= 146), libimobiledevice1 (>= 0.9.7), libplist1 (>= 0.16), libpolkit-gobject-1-0 (>= 0.94), libupower-glib1, libusb-1.0-0 (>= 2:1.0.8), udev, dbus, pm-utils
+Recommends: policykit-1
+Section: admin
+Priority: optional
+Homepage: http://upower.freedesktop.org/
+Description: abstraction for power management
+ upower provides an interface to enumerate power sources on the system
+ and control system-wide power management. Any application can access the
+ org.freedesktop.UPower service on the system message bus. Some
+ operations (such as suspending the system) are restricted using PolicyKit.

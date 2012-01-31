@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="UPower-up-stats-item">
+<refmeta>
+<refentrytitle role="top_of_page" id="UPower-up-stats-item.top_of_page">up-stats-item</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  UPOWER Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>up-stats-item</refname>
+<refpurpose>Helper object representing one item of statistics data.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="UPower-up-stats-item.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>typedef             <link linkend="UpStatsItemPrivate">UpStatsItemPrivate</link>;
+<link linkend="UpStatsItem"><returnvalue>UpStatsItem</returnvalue></link> *       <link linkend="up-stats-item-new">up_stats_item_new</link>                   (<parameter><type>void</type></parameter>);
+<link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>             <link linkend="up-stats-item-get-value">up_stats_item_get_value</link>             (<parameter><link linkend="UpStatsItem"><type>UpStatsItem</type></link> *stats_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-stats-item-set-value">up_stats_item_set_value</link>             (<parameter><link linkend="UpStatsItem"><type>UpStatsItem</type></link> *stats_item</parameter>,
+                                                         <parameter><link linkend="gdouble"><type>gdouble</type></link> value</parameter>);
+<link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>             <link linkend="up-stats-item-get-accuracy">up_stats_item_get_accuracy</link>          (<parameter><link linkend="UpStatsItem"><type>UpStatsItem</type></link> *stats_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-stats-item-set-accuracy">up_stats_item_set_accuracy</link>          (<parameter><link linkend="UpStatsItem"><type>UpStatsItem</type></link> *stats_item</parameter>,
+                                                         <parameter><link linkend="gdouble"><type>gdouble</type></link> accuracy</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="UPower-up-stats-item.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This object represents one item of data which may be returned from the
+daemon in response to a query.
+</para>
+<para>
+See also: <link linkend="UpDevice"><type>UpDevice</type></link>, <link linkend="UpClient"><type>UpClient</type></link>
+</para>
+</refsect1>
+<refsect1 id="UPower-up-stats-item.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="UpStatsItemPrivate" role="typedef">
+<title>UpStatsItemPrivate</title>
+<indexterm zone="UpStatsItemPrivate"><primary>UpStatsItemPrivate</primary></indexterm>
+<programlisting>typedef struct UpStatsItemPrivate UpStatsItemPrivate;
+</programlisting>
+</refsect2>
+<refsect2 id="up-stats-item-new" role="function" condition="since:0.9.0">
+<title>up_stats_item_new ()</title>
+<indexterm zone="up-stats-item-new" role="0.9.0"><primary>up_stats_item_new</primary></indexterm>
+<programlisting><link linkend="UpStatsItem"><returnvalue>UpStatsItem</returnvalue></link> *       up_stats_item_new                   (<parameter><type>void</type></parameter>);</programlisting>
+<variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new UpStatsItem object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-stats-item-get-value" role="function" condition="since:0.9.0">
+<title>up_stats_item_get_value ()</title>
+<indexterm zone="up-stats-item-get-value" role="0.9.0"><primary>up_stats_item_get_value</primary></indexterm>
+<programlisting><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>             up_stats_item_get_value             (<parameter><link linkend="UpStatsItem"><type>UpStatsItem</type></link> *stats_item</parameter>);</programlisting>
+<para>
+Gets the item value.
+</para><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-stats-item-set-value" role="function" condition="since:0.9.0">
+<title>up_stats_item_set_value ()</title>
+<indexterm zone="up-stats-item-set-value" role="0.9.0"><primary>up_stats_item_set_value</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_stats_item_set_value             (<parameter><link linkend="UpStatsItem"><type>UpStatsItem</type></link> *stats_item</parameter>,
+                                                         <parameter><link linkend="gdouble"><type>gdouble</type></link> value</parameter>);</programlisting>
+<para>
+Sets the item value.
+</para><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-stats-item-get-accuracy" role="function" condition="since:0.9.0">
+<title>up_stats_item_get_accuracy ()</title>
+<indexterm zone="up-stats-item-get-accuracy" role="0.9.0"><primary>up_stats_item_get_accuracy</primary></indexterm>
+<programlisting><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>             up_stats_item_get_accuracy          (<parameter><link linkend="UpStatsItem"><type>UpStatsItem</type></link> *stats_item</parameter>);</programlisting>
+<para>
+Gets the item accuracy.
+</para><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-stats-item-set-accuracy" role="function" condition="since:0.9.0">
+<title>up_stats_item_set_accuracy ()</title>
+<indexterm zone="up-stats-item-set-accuracy" role="0.9.0"><primary>up_stats_item_set_accuracy</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_stats_item_set_accuracy          (<parameter><link linkend="UpStatsItem"><type>UpStatsItem</type></link> *stats_item</parameter>,
+                                                         <parameter><link linkend="gdouble"><type>gdouble</type></link> accuracy</parameter>);</programlisting>
+<para>
+Sets the item accuracy.
+</para><para role="since">Since 0.9.0</para></refsect2>
+
+</refsect1>
+
+</refentry>

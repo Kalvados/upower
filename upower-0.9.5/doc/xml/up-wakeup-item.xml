@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="UPower-up-wakeup-item">
+<refmeta>
+<refentrytitle role="top_of_page" id="UPower-up-wakeup-item.top_of_page">up-wakeup-item</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  UPOWER Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>up-wakeup-item</refname>
+<refpurpose>Helper object representing one item of wakeup data.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="UPower-up-wakeup-item.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>typedef             <link linkend="UpWakeupItemPrivate">UpWakeupItemPrivate</link>;
+<link linkend="UpWakeupItem"><returnvalue>UpWakeupItem</returnvalue></link> *      <link linkend="up-wakeup-item-new">up_wakeup_item_new</link>                  (<parameter><type>void</type></parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-wakeup-item-get-is-userspace">up_wakeup_item_get_is_userspace</link>     (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-wakeup-item-set-is-userspace">up_wakeup_item_set_is_userspace</link>     (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter><link linkend="gboolean"><type>gboolean</type></link> is_userspace</parameter>);
+<link linkend="guint"><returnvalue>guint</returnvalue></link>               <link linkend="up-wakeup-item-get-id">up_wakeup_item_get_id</link>               (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-wakeup-item-set-id">up_wakeup_item_set_id</link>               (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> id</parameter>);
+<link linkend="guint"><returnvalue>guint</returnvalue></link>               <link linkend="up-wakeup-item-get-old">up_wakeup_item_get_old</link>              (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-wakeup-item-set-old">up_wakeup_item_set_old</link>              (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> old</parameter>);
+<link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>             <link linkend="up-wakeup-item-get-value">up_wakeup_item_get_value</link>            (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-wakeup-item-set-value">up_wakeup_item_set_value</link>            (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter><link linkend="gdouble"><type>gdouble</type></link> value</parameter>);
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-wakeup-item-get-cmdline">up_wakeup_item_get_cmdline</link>          (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-wakeup-item-set-cmdline">up_wakeup_item_set_cmdline</link>          (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *cmdline</parameter>);
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-wakeup-item-get-details">up_wakeup_item_get_details</link>          (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-wakeup-item-set-details">up_wakeup_item_set_details</link>          (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *details</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="UPower-up-wakeup-item.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This object represents one item of data which may be returned from the
+daemon in response to a query.
+</para>
+<para>
+See also: <link linkend="UpDevice"><type>UpDevice</type></link>, <link linkend="UpClient"><type>UpClient</type></link>
+</para>
+</refsect1>
+<refsect1 id="UPower-up-wakeup-item.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="UpWakeupItemPrivate" role="typedef">
+<title>UpWakeupItemPrivate</title>
+<indexterm zone="UpWakeupItemPrivate"><primary>UpWakeupItemPrivate</primary></indexterm>
+<programlisting>typedef struct UpWakeupItemPrivate UpWakeupItemPrivate;
+</programlisting>
+</refsect2>
+<refsect2 id="up-wakeup-item-new" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_new ()</title>
+<indexterm zone="up-wakeup-item-new" role="0.9.0"><primary>up_wakeup_item_new</primary></indexterm>
+<programlisting><link linkend="UpWakeupItem"><returnvalue>UpWakeupItem</returnvalue></link> *      up_wakeup_item_new                  (<parameter><type>void</type></parameter>);</programlisting>
+<variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new UpWakeupItem object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-get-is-userspace" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_get_is_userspace ()</title>
+<indexterm zone="up-wakeup-item-get-is-userspace" role="0.9.0"><primary>up_wakeup_item_get_is_userspace</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_wakeup_item_get_is_userspace     (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);</programlisting>
+<para>
+Gets if the item is userspace.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-set-is-userspace" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_set_is_userspace ()</title>
+<indexterm zone="up-wakeup-item-set-is-userspace" role="0.9.0"><primary>up_wakeup_item_set_is_userspace</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_wakeup_item_set_is_userspace     (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter><link linkend="gboolean"><type>gboolean</type></link> is_userspace</parameter>);</programlisting>
+<para>
+Sets if the item is userspace.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>is_userspace</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-get-id" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_get_id ()</title>
+<indexterm zone="up-wakeup-item-get-id" role="0.9.0"><primary>up_wakeup_item_get_id</primary></indexterm>
+<programlisting><link linkend="guint"><returnvalue>guint</returnvalue></link>               up_wakeup_item_get_id               (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);</programlisting>
+<para>
+Gets the item id.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-set-id" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_set_id ()</title>
+<indexterm zone="up-wakeup-item-set-id" role="0.9.0"><primary>up_wakeup_item_set_id</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_wakeup_item_set_id               (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> id</parameter>);</programlisting>
+<para>
+Sets the item id.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>id</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-get-old" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_get_old ()</title>
+<indexterm zone="up-wakeup-item-get-old" role="0.9.0"><primary>up_wakeup_item_get_old</primary></indexterm>
+<programlisting><link linkend="guint"><returnvalue>guint</returnvalue></link>               up_wakeup_item_get_old              (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);</programlisting>
+<para>
+Gets the item old.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-set-old" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_set_old ()</title>
+<indexterm zone="up-wakeup-item-set-old" role="0.9.0"><primary>up_wakeup_item_set_old</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_wakeup_item_set_old              (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> old</parameter>);</programlisting>
+<para>
+Sets the item old.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>old</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-get-value" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_get_value ()</title>
+<indexterm zone="up-wakeup-item-get-value" role="0.9.0"><primary>up_wakeup_item_get_value</primary></indexterm>
+<programlisting><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>             up_wakeup_item_get_value            (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);</programlisting>
+<para>
+Gets the item value.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-set-value" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_set_value ()</title>
+<indexterm zone="up-wakeup-item-set-value" role="0.9.0"><primary>up_wakeup_item_set_value</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_wakeup_item_set_value            (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter><link linkend="gdouble"><type>gdouble</type></link> value</parameter>);</programlisting>
+<para>
+Sets the item value.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-get-cmdline" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_get_cmdline ()</title>
+<indexterm zone="up-wakeup-item-get-cmdline" role="0.9.0"><primary>up_wakeup_item_get_cmdline</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_wakeup_item_get_cmdline          (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);</programlisting>
+<para>
+Gets the item cmdline.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-set-cmdline" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_set_cmdline ()</title>
+<indexterm zone="up-wakeup-item-set-cmdline" role="0.9.0"><primary>up_wakeup_item_set_cmdline</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_wakeup_item_set_cmdline          (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *cmdline</parameter>);</programlisting>
+<para>
+Sets the item cmdline.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cmdline</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-get-details" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_get_details ()</title>
+<indexterm zone="up-wakeup-item-get-details" role="0.9.0"><primary>up_wakeup_item_get_details</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_wakeup_item_get_details          (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>);</programlisting>
+<para>
+Gets the item details.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-wakeup-item-set-details" role="function" condition="since:0.9.0">
+<title>up_wakeup_item_set_details ()</title>
+<indexterm zone="up-wakeup-item-set-details" role="0.9.0"><primary>up_wakeup_item_set_details</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_wakeup_item_set_details          (<parameter><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link> *wakeup_item</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *details</parameter>);</programlisting>
+<para>
+Sets the item details.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpWakeupItem"><type>UpWakeupItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>details</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+
+</refsect1>
+
+</refentry>

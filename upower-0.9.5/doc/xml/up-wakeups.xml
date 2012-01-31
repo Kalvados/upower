@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="UPower-up-wakeups">
+<refmeta>
+<refentrytitle role="top_of_page" id="UPower-up-wakeups.top_of_page">up-wakeups</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  UPOWER Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>up-wakeups</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="UPower-up-wakeups.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>#define             <link linkend="UP-WAKEUPS-ERROR:CAPS">UP_WAKEUPS_ERROR</link>
+#define             <link linkend="UP-WAKEUPS-TYPE-ERROR:CAPS">UP_WAKEUPS_TYPE_ERROR</link>
+typedef             <link linkend="UpWakeupsPrivate">UpWakeupsPrivate</link>;
+<link linkend="void"><returnvalue>void</returnvalue></link>                (<link linkend="data-changed">*data_changed</link>)                     (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                (<link linkend="total-changed">*total_changed</link>)                    (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> value</parameter>);
+<link linkend="UpWakeups"><returnvalue>UpWakeups</returnvalue></link> *         <link linkend="up-wakeups-new">up_wakeups_new</link>                      (<parameter><type>void</type></parameter>);
+<link linkend="guint"><returnvalue>guint</returnvalue></link>               <link linkend="up-wakeups-get-total-sync">up_wakeups_get_total_sync</link>           (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link> *         <link linkend="up-wakeups-get-data-sync">up_wakeups_get_data_sync</link>            (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-wakeups-get-properties-sync">up_wakeups_get_properties_sync</link>      (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-wakeups-get-has-capability">up_wakeups_get_has_capability</link>       (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="UPower-up-wakeups.description" role="desc">
+<title role="desc.title">Description</title>
+
+</refsect1>
+<refsect1 id="UPower-up-wakeups.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="UP-WAKEUPS-ERROR:CAPS" role="macro">
+<title>UP_WAKEUPS_ERROR</title>
+<indexterm zone="UP-WAKEUPS-ERROR:CAPS"><primary>UP_WAKEUPS_ERROR</primary></indexterm>
+<programlisting>#define UP_WAKEUPS_ERROR&#160;(up_wakeups_error_quark ())
+</programlisting>
+</refsect2>
+<refsect2 id="UP-WAKEUPS-TYPE-ERROR:CAPS" role="macro">
+<title>UP_WAKEUPS_TYPE_ERROR</title>
+<indexterm zone="UP-WAKEUPS-TYPE-ERROR:CAPS"><primary>UP_WAKEUPS_TYPE_ERROR</primary></indexterm>
+<programlisting>#define UP_WAKEUPS_TYPE_ERROR&#160;(up_wakeups_error_get_type ())
+</programlisting>
+</refsect2>
+<refsect2 id="UpWakeupsPrivate" role="typedef">
+<title>UpWakeupsPrivate</title>
+<indexterm zone="UpWakeupsPrivate"><primary>UpWakeupsPrivate</primary></indexterm>
+<programlisting>typedef struct UpWakeupsPrivate UpWakeupsPrivate;
+</programlisting>
+</refsect2>
+<refsect2 id="data-changed" role="function">
+<title>data_changed ()</title>
+<indexterm zone="data-changed"><primary>data_changed</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                (*data_changed)                     (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="total-changed" role="function">
+<title>total_changed ()</title>
+<indexterm zone="total-changed"><primary>total_changed</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                (*total_changed)                    (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> value</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="up-wakeups-new" role="function" condition="since:0.9.1">
+<title>up_wakeups_new ()</title>
+<indexterm zone="up-wakeups-new" role="0.9.1"><primary>up_wakeups_new</primary></indexterm>
+<programlisting><link linkend="UpWakeups"><returnvalue>UpWakeups</returnvalue></link> *         up_wakeups_new                      (<parameter><type>void</type></parameter>);</programlisting>
+<para>
+Gets a new object to allow querying the wakeups data from the server.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the a new <parameter>UpWakeups</parameter> object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.1</para></refsect2>
+<refsect2 id="up-wakeups-get-total-sync" role="function" condition="since:0.9.1">
+<title>up_wakeups_get_total_sync ()</title>
+<indexterm zone="up-wakeups-get-total-sync" role="0.9.1"><primary>up_wakeups_get_total_sync</primary></indexterm>
+<programlisting><link linkend="guint"><returnvalue>guint</returnvalue></link>               up_wakeups_get_total_sync           (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Gets the the total number of wakeups per second from the daemon.
+</para><variablelist role="params">
+<varlistentry><term><parameter>wakeups</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpWakeups"><type>UpWakeups</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> number of wakeups per second.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.1</para></refsect2>
+<refsect2 id="up-wakeups-get-data-sync" role="function" condition="since:0.9.1">
+<title>up_wakeups_get_data_sync ()</title>
+<indexterm zone="up-wakeups-get-data-sync" role="0.9.1"><primary>up_wakeups_get_data_sync</primary></indexterm>
+<programlisting><link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link> *         up_wakeups_get_data_sync            (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Gets the wakeups data from the daemon.
+</para><variablelist role="params">
+<varlistentry><term><parameter>wakeups</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpWakeups"><type>UpWakeups</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an array of <link linkend="UpWakeupItem"><literal>UpWakeupItem</literal></link>'s
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.1</para></refsect2>
+<refsect2 id="up-wakeups-get-properties-sync" role="function" condition="since:0.9.1">
+<title>up_wakeups_get_properties_sync ()</title>
+<indexterm zone="up-wakeups-get-properties-sync" role="0.9.1"><primary>up_wakeups_get_properties_sync</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_wakeups_get_properties_sync      (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Gets properties from the daemon about wakeup data.
+</para><variablelist role="params">
+<varlistentry><term><parameter>wakeups</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpWakeups"><type>UpWakeups</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if supported
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.1</para></refsect2>
+<refsect2 id="up-wakeups-get-has-capability" role="function" condition="since:0.9.1">
+<title>up_wakeups_get_has_capability ()</title>
+<indexterm zone="up-wakeups-get-has-capability" role="0.9.1"><primary>up_wakeups_get_has_capability</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_wakeups_get_has_capability       (<parameter><link linkend="UpWakeups"><type>UpWakeups</type></link> *wakeups</parameter>);</programlisting>
+<para>
+Returns if the daemon supports getting the wakeup data.
+</para><variablelist role="params">
+<varlistentry><term><parameter>wakeups</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpWakeups"><type>UpWakeups</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if supported
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.1</para></refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="up-client-enumerate-devices-sync"><link linkend="up-client-enumerate-devices-sync">up_client_enumerate_devices_sync</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-get-can-hibernate"><link linkend="up-client-get-can-hibernate">up_client_get_can_hibernate</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-get-can-suspend"><link linkend="up-client-get-can-suspend">up_client_get_can_suspend</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-get-daemon-version"><link linkend="up-client-get-daemon-version">up_client_get_daemon_version</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-get-devices"><link linkend="up-client-get-devices">up_client_get_devices</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-get-lid-is-closed"><link linkend="up-client-get-lid-is-closed">up_client_get_lid_is_closed</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-get-on-battery"><link linkend="up-client-get-on-battery">up_client_get_on_battery</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-get-on-low-battery"><link linkend="up-client-get-on-low-battery">up_client_get_on_low_battery</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-get-properties-sync"><link linkend="up-client-get-properties-sync">up_client_get_properties_sync</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-hibernate-sync"><link linkend="up-client-hibernate-sync">up_client_hibernate_sync</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-new"><link linkend="up-client-new">up_client_new</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-client-suspend-sync"><link linkend="up-client-suspend-sync">up_client_suspend_sync</link>, function in <link linkend="UPower-up-client">up-client</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="up-device-get-history-sync"><link linkend="up-device-get-history-sync">up_device_get_history_sync</link>, function in <link linkend="UPower-up-device">up-device</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-get-object-path"><link linkend="up-device-get-object-path">up_device_get_object_path</link>, function in <link linkend="UPower-up-device">up-device</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-get-statistics-sync"><link linkend="up-device-get-statistics-sync">up_device_get_statistics_sync</link>, function in <link linkend="UPower-up-device">up-device</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-kind-from-string"><link linkend="up-device-kind-from-string">up_device_kind_from_string</link>, function in <link linkend="UPower-up-types">up-types</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-kind-to-string"><link linkend="up-device-kind-to-string">up_device_kind_to_string</link>, function in <link linkend="UPower-up-types">up-types</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-new"><link linkend="up-device-new">up_device_new</link>, function in <link linkend="UPower-up-device">up-device</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-refresh-sync"><link linkend="up-device-refresh-sync">up_device_refresh_sync</link>, function in <link linkend="UPower-up-device">up-device</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-set-object-path-sync"><link linkend="up-device-set-object-path-sync">up_device_set_object_path_sync</link>, function in <link linkend="UPower-up-device">up-device</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-state-from-string"><link linkend="up-device-state-from-string">up_device_state_from_string</link>, function in <link linkend="UPower-up-types">up-types</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-state-to-string"><link linkend="up-device-state-to-string">up_device_state_to_string</link>, function in <link linkend="UPower-up-types">up-types</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-technology-from-string"><link linkend="up-device-technology-from-string">up_device_technology_from_string</link>, function in <link linkend="UPower-up-types">up-types</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-technology-to-string"><link linkend="up-device-technology-to-string">up_device_technology_to_string</link>, function in <link linkend="UPower-up-types">up-types</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-device-to-text"><link linkend="up-device-to-text">up_device_to_text</link>, function in <link linkend="UPower-up-device">up-device</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>H</title>
+<indexentry><primaryie linkends="up-history-item-get-state"><link linkend="up-history-item-get-state">up_history_item_get_state</link>, function in <link linkend="UPower-up-history-item">up-history-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-history-item-get-time"><link linkend="up-history-item-get-time">up_history_item_get_time</link>, function in <link linkend="UPower-up-history-item">up-history-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-history-item-get-value"><link linkend="up-history-item-get-value">up_history_item_get_value</link>, function in <link linkend="UPower-up-history-item">up-history-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-history-item-new"><link linkend="up-history-item-new">up_history_item_new</link>, function in <link linkend="UPower-up-history-item">up-history-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-history-item-set-state"><link linkend="up-history-item-set-state">up_history_item_set_state</link>, function in <link linkend="UPower-up-history-item">up-history-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-history-item-set-time"><link linkend="up-history-item-set-time">up_history_item_set_time</link>, function in <link linkend="UPower-up-history-item">up-history-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-history-item-set-value"><link linkend="up-history-item-set-value">up_history_item_set_value</link>, function in <link linkend="UPower-up-history-item">up-history-item</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>Q</title>
+<indexentry><primaryie linkends="up-qos-item-get-cmdline"><link linkend="up-qos-item-get-cmdline">up_qos_item_get_cmdline</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-get-cookie"><link linkend="up-qos-item-get-cookie">up_qos_item_get_cookie</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-get-kind"><link linkend="up-qos-item-get-kind">up_qos_item_get_kind</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-get-persistent"><link linkend="up-qos-item-get-persistent">up_qos_item_get_persistent</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-get-pid"><link linkend="up-qos-item-get-pid">up_qos_item_get_pid</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-get-sender"><link linkend="up-qos-item-get-sender">up_qos_item_get_sender</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-get-timespec"><link linkend="up-qos-item-get-timespec">up_qos_item_get_timespec</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-get-uid"><link linkend="up-qos-item-get-uid">up_qos_item_get_uid</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-get-value"><link linkend="up-qos-item-get-value">up_qos_item_get_value</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-new"><link linkend="up-qos-item-new">up_qos_item_new</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-set-cmdline"><link linkend="up-qos-item-set-cmdline">up_qos_item_set_cmdline</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-set-cookie"><link linkend="up-qos-item-set-cookie">up_qos_item_set_cookie</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-set-kind"><link linkend="up-qos-item-set-kind">up_qos_item_set_kind</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-set-persistent"><link linkend="up-qos-item-set-persistent">up_qos_item_set_persistent</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-set-pid"><link linkend="up-qos-item-set-pid">up_qos_item_set_pid</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-set-sender"><link linkend="up-qos-item-set-sender">up_qos_item_set_sender</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-set-timespec"><link linkend="up-qos-item-set-timespec">up_qos_item_set_timespec</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-set-uid"><link linkend="up-qos-item-set-uid">up_qos_item_set_uid</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-item-set-value"><link linkend="up-qos-item-set-value">up_qos_item_set_value</link>, function in <link linkend="UPower-up-qos-item">up-qos-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-kind-from-string"><link linkend="up-qos-kind-from-string">up_qos_kind_from_string</link>, function in <link linkend="UPower-up-types">up-types</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-qos-kind-to-string"><link linkend="up-qos-kind-to-string">up_qos_kind_to_string</link>, function in <link linkend="UPower-up-types">up-types</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="up-stats-item-get-accuracy"><link linkend="up-stats-item-get-accuracy">up_stats_item_get_accuracy</link>, function in <link linkend="UPower-up-stats-item">up-stats-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-stats-item-get-value"><link linkend="up-stats-item-get-value">up_stats_item_get_value</link>, function in <link linkend="UPower-up-stats-item">up-stats-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-stats-item-new"><link linkend="up-stats-item-new">up_stats_item_new</link>, function in <link linkend="UPower-up-stats-item">up-stats-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-stats-item-set-accuracy"><link linkend="up-stats-item-set-accuracy">up_stats_item_set_accuracy</link>, function in <link linkend="UPower-up-stats-item">up-stats-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-stats-item-set-value"><link linkend="up-stats-item-set-value">up_stats_item_set_value</link>, function in <link linkend="UPower-up-stats-item">up-stats-item</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="up-wakeup-item-get-cmdline"><link linkend="up-wakeup-item-get-cmdline">up_wakeup_item_get_cmdline</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-get-details"><link linkend="up-wakeup-item-get-details">up_wakeup_item_get_details</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-get-id"><link linkend="up-wakeup-item-get-id">up_wakeup_item_get_id</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-get-is-userspace"><link linkend="up-wakeup-item-get-is-userspace">up_wakeup_item_get_is_userspace</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-get-old"><link linkend="up-wakeup-item-get-old">up_wakeup_item_get_old</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-get-value"><link linkend="up-wakeup-item-get-value">up_wakeup_item_get_value</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-new"><link linkend="up-wakeup-item-new">up_wakeup_item_new</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-set-cmdline"><link linkend="up-wakeup-item-set-cmdline">up_wakeup_item_set_cmdline</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-set-details"><link linkend="up-wakeup-item-set-details">up_wakeup_item_set_details</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-set-id"><link linkend="up-wakeup-item-set-id">up_wakeup_item_set_id</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-set-is-userspace"><link linkend="up-wakeup-item-set-is-userspace">up_wakeup_item_set_is_userspace</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-set-old"><link linkend="up-wakeup-item-set-old">up_wakeup_item_set_old</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+<indexentry><primaryie linkends="up-wakeup-item-set-value"><link linkend="up-wakeup-item-set-value">up_wakeup_item_set_value</link>, function in <link linkend="UPower-up-wakeup-item">up-wakeup-item</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

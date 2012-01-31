@@ -1,0 +1,109 @@
+67% symbol docs coverage.
+143 symbols documented.
+36 symbols incomplete.
+71 not documented.
+
+
+UP_CHECK_VERSION (micro, minor, major)
+UP_CLIENT_ERROR
+UP_CLIENT_TYPE_ERROR
+UP_DEVICE_ERROR
+UP_DEVICE_TYPE_ERROR
+UP_MAJOR_VERSION
+UP_MINOR_VERSION
+UP_WAKEUPS_ERROR
+UP_WAKEUPS_TYPE_ERROR
+UpDeviceKind (<items>)
+UpDeviceState (<items>)
+UpDeviceTechnology (<items>)
+UpHistoryItem:state
+UpHistoryItem:time
+UpHistoryItem:value
+UpHistoryItemPrivate
+UpQosItem:cmdline
+UpQosItem:cookie
+UpQosItem:persistent
+UpQosItem:pid
+UpQosItem:sender
+UpQosItem:timespec
+UpQosItem:type
+UpQosItem:uid
+UpQosItem:value
+UpQosItemPrivate
+UpQosKind (<items>)
+UpStatsItem:accuracy
+UpStatsItem:value
+UpStatsItemPrivate
+UpWakeupItem:cmdline
+UpWakeupItem:details
+UpWakeupItem:id
+UpWakeupItem:is-userspace
+UpWakeupItem:old
+UpWakeupItem:value
+UpWakeupItemPrivate
+UpWakeupsPrivate
+changed (<parameters>)
+data_changed (<parameters>)
+device_added (<parameters>)
+device_changed (<parameters>)
+device_removed (<parameters>)
+total_changed (<parameters>)
+up_client_enumerate_devices_sync (cancellable)
+up_device_kind_from_string (type)
+up_device_kind_to_string (type_enum)
+up_device_state_from_string (state)
+up_device_state_to_string (state_enum)
+up_device_technology_from_string (technology)
+up_device_technology_to_string (technology_enum)
+up_history_item_class_init
+up_history_item_finalize
+up_history_item_get_property
+up_history_item_init
+up_history_item_new
+up_history_item_set_property
+up_qos_item_class_init
+up_qos_item_finalize
+up_qos_item_get_property
+up_qos_item_init
+up_qos_item_new
+up_qos_item_set_property
+up_qos_kind_from_string (type)
+up_qos_kind_to_string (type)
+up_stats_item_class_init
+up_stats_item_finalize
+up_stats_item_get_accuracy (stats_item)
+up_stats_item_get_property
+up_stats_item_get_value (stats_item)
+up_stats_item_init
+up_stats_item_new
+up_stats_item_set_accuracy (stats_item, accuracy)
+up_stats_item_set_property
+up_stats_item_set_value (stats_item, value)
+up_wakeup_item_class_init
+up_wakeup_item_finalize
+up_wakeup_item_get_cmdline (wakeup_item)
+up_wakeup_item_get_details (wakeup_item)
+up_wakeup_item_get_id (wakeup_item)
+up_wakeup_item_get_is_userspace (wakeup_item)
+up_wakeup_item_get_old (wakeup_item)
+up_wakeup_item_get_property
+up_wakeup_item_get_value (wakeup_item)
+up_wakeup_item_init
+up_wakeup_item_new
+up_wakeup_item_set_cmdline (wakeup_item)
+up_wakeup_item_set_details (wakeup_item)
+up_wakeup_item_set_id (wakeup_item)
+up_wakeup_item_set_is_userspace (wakeup_item)
+up_wakeup_item_set_old (wakeup_item)
+up_wakeup_item_set_property
+up_wakeup_item_set_value (wakeup_item)
+up_wakeups_class_init
+up_wakeups_data_changed_cb
+up_wakeups_ensure_properties
+up_wakeups_finalize
+up_wakeups_init
+up_wakeups_total_changed_cb
+
+
+up-wakeups:Long_Description
+up-wakeups:Short_Description

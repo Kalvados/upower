@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="UPower-up-version">
+<refmeta>
+<refentrytitle role="top_of_page" id="UPower-up-version.top_of_page">up-version</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  UPOWER Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>up-version</refname>
+<refpurpose>Obtains the version for the installed UPower</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="UPower-up-version.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>#define             <link linkend="UP-MAJOR-VERSION:CAPS">UP_MAJOR_VERSION</link>
+#define             <link linkend="UP-MINOR-VERSION:CAPS">UP_MINOR_VERSION</link>
+#define             <link linkend="UP-MICRO-VERSION:CAPS">UP_MICRO_VERSION</link>
+#define             <link linkend="UP-CHECK-VERSION:CAPS">UP_CHECK_VERSION</link>                    (major,
+                                                         minor,
+                                                         micro)
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="UPower-up-version.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+These compile time macros allow the user to enable parts of client code
+depending on the version of libupower-glib installed.
+</para>
+<para>
+See also: <link linkend="UpClient"><type>UpClient</type></link>, <link linkend="UpDevice"><type>UpDevice</type></link>
+</para>
+</refsect1>
+<refsect1 id="UPower-up-version.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="UP-MAJOR-VERSION:CAPS" role="macro">
+<title>UP_MAJOR_VERSION</title>
+<indexterm zone="UP-MAJOR-VERSION:CAPS"><primary>UP_MAJOR_VERSION</primary></indexterm>
+<programlisting>#define UP_MAJOR_VERSION				(0)
+</programlisting>
+</refsect2>
+<refsect2 id="UP-MINOR-VERSION:CAPS" role="macro">
+<title>UP_MINOR_VERSION</title>
+<indexterm zone="UP-MINOR-VERSION:CAPS"><primary>UP_MINOR_VERSION</primary></indexterm>
+<programlisting>#define UP_MINOR_VERSION				(9)
+</programlisting>
+</refsect2>
+<refsect2 id="UP-MICRO-VERSION:CAPS" role="macro">
+<title>UP_MICRO_VERSION</title>
+<indexterm zone="UP-MICRO-VERSION:CAPS"><primary>UP_MICRO_VERSION</primary></indexterm>
+<programlisting>#define UP_MICRO_VERSION				(5)
+</programlisting>
+<para>
+The compile-time micro version
+</para></refsect2>
+<refsect2 id="UP-CHECK-VERSION:CAPS" role="macro">
+<title>UP_CHECK_VERSION()</title>
+<indexterm zone="UP-CHECK-VERSION:CAPS"><primary>UP_CHECK_VERSION</primary></indexterm>
+<programlisting>#define             UP_CHECK_VERSION(major,minor,micro)</programlisting>
+<para>
+The compile-time major version
+</para></refsect2>
+
+</refsect1>
+
+</refentry>

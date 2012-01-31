@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="UPower-up-types">
+<refmeta>
+<refentrytitle role="top_of_page" id="UPower-up-types.top_of_page">up-types</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  UPOWER Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>up-types</refname>
+<refpurpose>Types used by UPower and libupower-glib</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="UPower-up-types.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>enum                <link linkend="UpDeviceKind">UpDeviceKind</link>;
+enum                <link linkend="UpDeviceState">UpDeviceState</link>;
+enum                <link linkend="UpDeviceTechnology">UpDeviceTechnology</link>;
+enum                <link linkend="UpQosKind">UpQosKind</link>;
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-device-kind-to-string">up_device_kind_to_string</link>            (<parameter><link linkend="UpDeviceKind"><type>UpDeviceKind</type></link> type_enum</parameter>);
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-device-state-to-string">up_device_state_to_string</link>           (<parameter><link linkend="UpDeviceState"><type>UpDeviceState</type></link> state_enum</parameter>);
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-device-technology-to-string">up_device_technology_to_string</link>      (<parameter><link linkend="UpDeviceTechnology"><type>UpDeviceTechnology</type></link> technology_enum</parameter>);
+<link linkend="UpDeviceKind"><returnvalue>UpDeviceKind</returnvalue></link>        <link linkend="up-device-kind-from-string">up_device_kind_from_string</link>          (<parameter>const <link linkend="gchar"><type>gchar</type></link> *type</parameter>);
+<link linkend="UpDeviceState"><returnvalue>UpDeviceState</returnvalue></link>       <link linkend="up-device-state-from-string">up_device_state_from_string</link>         (<parameter>const <link linkend="gchar"><type>gchar</type></link> *state</parameter>);
+<link linkend="UpDeviceTechnology"><returnvalue>UpDeviceTechnology</returnvalue></link>  <link linkend="up-device-technology-from-string">up_device_technology_from_string</link>    (<parameter>const <link linkend="gchar"><type>gchar</type></link> *technology</parameter>);
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-qos-kind-to-string">up_qos_kind_to_string</link>               (<parameter><link linkend="UpQosKind"><type>UpQosKind</type></link> type</parameter>);
+<link linkend="UpQosKind"><returnvalue>UpQosKind</returnvalue></link>           <link linkend="up-qos-kind-from-string">up_qos_kind_from_string</link>             (<parameter>const <link linkend="gchar"><type>gchar</type></link> *type</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="UPower-up-types.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+These helper functions provide a way to marshal enumerated values to
+text and back again.
+</para>
+<para>
+See also: <link linkend="UpClient"><type>UpClient</type></link>, <link linkend="UpDevice"><type>UpDevice</type></link>
+</para>
+</refsect1>
+<refsect1 id="UPower-up-types.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="UpDeviceKind" role="enum">
+<title>enum UpDeviceKind</title>
+<indexterm zone="UpDeviceKind"><primary>UpDeviceKind</primary></indexterm>
+<programlisting>typedef enum {
+	UP_DEVICE_KIND_UNKNOWN,
+	UP_DEVICE_KIND_LINE_POWER,
+	UP_DEVICE_KIND_BATTERY,
+	UP_DEVICE_KIND_UPS,
+	UP_DEVICE_KIND_MONITOR,
+	UP_DEVICE_KIND_MOUSE,
+	UP_DEVICE_KIND_KEYBOARD,
+	UP_DEVICE_KIND_PDA,
+	UP_DEVICE_KIND_PHONE,
+	UP_DEVICE_KIND_MEDIA_PLAYER,
+	UP_DEVICE_KIND_TABLET,
+	UP_DEVICE_KIND_COMPUTER,
+	UP_DEVICE_KIND_LAST
+} UpDeviceKind;
+</programlisting>
+<para>
+The device type.
+</para></refsect2>
+<refsect2 id="UpDeviceState" role="enum">
+<title>enum UpDeviceState</title>
+<indexterm zone="UpDeviceState"><primary>UpDeviceState</primary></indexterm>
+<programlisting>typedef enum {
+	UP_DEVICE_STATE_UNKNOWN,
+	UP_DEVICE_STATE_CHARGING,
+	UP_DEVICE_STATE_DISCHARGING,
+	UP_DEVICE_STATE_EMPTY,
+	UP_DEVICE_STATE_FULLY_CHARGED,
+	UP_DEVICE_STATE_PENDING_CHARGE,
+	UP_DEVICE_STATE_PENDING_DISCHARGE,
+	UP_DEVICE_STATE_LAST
+} UpDeviceState;
+</programlisting>
+<para>
+The device state.
+</para></refsect2>
+<refsect2 id="UpDeviceTechnology" role="enum">
+<title>enum UpDeviceTechnology</title>
+<indexterm zone="UpDeviceTechnology"><primary>UpDeviceTechnology</primary></indexterm>
+<programlisting>typedef enum {
+	UP_DEVICE_TECHNOLOGY_UNKNOWN,
+	UP_DEVICE_TECHNOLOGY_LITHIUM_ION,
+	UP_DEVICE_TECHNOLOGY_LITHIUM_POLYMER,
+	UP_DEVICE_TECHNOLOGY_LITHIUM_IRON_PHOSPHATE,
+	UP_DEVICE_TECHNOLOGY_LEAD_ACID,
+	UP_DEVICE_TECHNOLOGY_NICKEL_CADMIUM,
+	UP_DEVICE_TECHNOLOGY_NICKEL_METAL_HYDRIDE,
+	UP_DEVICE_TECHNOLOGY_LAST
+} UpDeviceTechnology;
+</programlisting>
+<para>
+The device technology.
+</para></refsect2>
+<refsect2 id="UpQosKind" role="enum">
+<title>enum UpQosKind</title>
+<indexterm zone="UpQosKind"><primary>UpQosKind</primary></indexterm>
+<programlisting>typedef enum {
+	UP_QOS_KIND_UNKNOWN,
+	UP_QOS_KIND_NETWORK,
+	UP_QOS_KIND_CPU_DMA,
+	UP_QOS_KIND_LAST
+} UpQosKind;
+</programlisting>
+<para>
+The type of QOS request.
+</para></refsect2>
+<refsect2 id="up-device-kind-to-string" role="function" condition="since:0.9.0">
+<title>up_device_kind_to_string ()</title>
+<indexterm zone="up-device-kind-to-string" role="0.9.0"><primary>up_device_kind_to_string</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_device_kind_to_string            (<parameter><link linkend="UpDeviceKind"><type>UpDeviceKind</type></link> type_enum</parameter>);</programlisting>
+<para>
+Converts a <link linkend="UpDeviceKind"><type>UpDeviceKind</type></link> to a string.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> identifier string
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-state-to-string" role="function" condition="since:0.9.0">
+<title>up_device_state_to_string ()</title>
+<indexterm zone="up-device-state-to-string" role="0.9.0"><primary>up_device_state_to_string</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_device_state_to_string           (<parameter><link linkend="UpDeviceState"><type>UpDeviceState</type></link> state_enum</parameter>);</programlisting>
+<para>
+Converts a <link linkend="UpDeviceState"><type>UpDeviceState</type></link> to a string.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> identifier string
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-technology-to-string" role="function" condition="since:0.9.0">
+<title>up_device_technology_to_string ()</title>
+<indexterm zone="up-device-technology-to-string" role="0.9.0"><primary>up_device_technology_to_string</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_device_technology_to_string      (<parameter><link linkend="UpDeviceTechnology"><type>UpDeviceTechnology</type></link> technology_enum</parameter>);</programlisting>
+<para>
+Converts a <link linkend="UpDeviceTechnology"><type>UpDeviceTechnology</type></link> to a string.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> identifier string
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-kind-from-string" role="function" condition="since:0.9.0">
+<title>up_device_kind_from_string ()</title>
+<indexterm zone="up-device-kind-from-string" role="0.9.0"><primary>up_device_kind_from_string</primary></indexterm>
+<programlisting><link linkend="UpDeviceKind"><returnvalue>UpDeviceKind</returnvalue></link>        up_device_kind_from_string          (<parameter>const <link linkend="gchar"><type>gchar</type></link> *type</parameter>);</programlisting>
+<para>
+Converts a string to a <link linkend="UpDeviceKind"><type>UpDeviceKind</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> enumerated value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-state-from-string" role="function" condition="since:0.9.0">
+<title>up_device_state_from_string ()</title>
+<indexterm zone="up-device-state-from-string" role="0.9.0"><primary>up_device_state_from_string</primary></indexterm>
+<programlisting><link linkend="UpDeviceState"><returnvalue>UpDeviceState</returnvalue></link>       up_device_state_from_string         (<parameter>const <link linkend="gchar"><type>gchar</type></link> *state</parameter>);</programlisting>
+<para>
+Converts a string to a <link linkend="UpDeviceState"><type>UpDeviceState</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> enumerated value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-technology-from-string" role="function" condition="since:0.9.0">
+<title>up_device_technology_from_string ()</title>
+<indexterm zone="up-device-technology-from-string" role="0.9.0"><primary>up_device_technology_from_string</primary></indexterm>
+<programlisting><link linkend="UpDeviceTechnology"><returnvalue>UpDeviceTechnology</returnvalue></link>  up_device_technology_from_string    (<parameter>const <link linkend="gchar"><type>gchar</type></link> *technology</parameter>);</programlisting>
+<para>
+Converts a string to a <link linkend="UpDeviceTechnology"><type>UpDeviceTechnology</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> enumerated value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-kind-to-string" role="function" condition="since:0.9.0">
+<title>up_qos_kind_to_string ()</title>
+<indexterm zone="up-qos-kind-to-string" role="0.9.0"><primary>up_qos_kind_to_string</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_qos_kind_to_string               (<parameter><link linkend="UpQosKind"><type>UpQosKind</type></link> type</parameter>);</programlisting>
+<para>
+Converts a <link linkend="UpQosKind"><type>UpQosKind</type></link> to a string.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> identifier string
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-qos-kind-from-string" role="function" condition="since:0.9.0">
+<title>up_qos_kind_from_string ()</title>
+<indexterm zone="up-qos-kind-from-string" role="0.9.0"><primary>up_qos_kind_from_string</primary></indexterm>
+<programlisting><link linkend="UpQosKind"><returnvalue>UpQosKind</returnvalue></link>           up_qos_kind_from_string             (<parameter>const <link linkend="gchar"><type>gchar</type></link> *type</parameter>);</programlisting>
+<para>
+Converts a string to a <link linkend="UpQosKind"><type>UpQosKind</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> enumerated value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+
+</refsect1>
+
+</refentry>

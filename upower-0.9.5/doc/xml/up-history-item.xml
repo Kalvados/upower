@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="UPower-up-history-item">
+<refmeta>
+<refentrytitle role="top_of_page" id="UPower-up-history-item.top_of_page">up-history-item</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  UPOWER Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>up-history-item</refname>
+<refpurpose>Helper object representing one item of historical data.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="UPower-up-history-item.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>typedef             <link linkend="UpHistoryItemPrivate">UpHistoryItemPrivate</link>;
+<link linkend="UpHistoryItem"><returnvalue>UpHistoryItem</returnvalue></link> *     <link linkend="up-history-item-new">up_history_item_new</link>                 (<parameter><type>void</type></parameter>);
+<link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>             <link linkend="up-history-item-get-value">up_history_item_get_value</link>           (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-history-item-set-value">up_history_item_set_value</link>           (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>,
+                                                         <parameter><link linkend="gdouble"><type>gdouble</type></link> value</parameter>);
+<link linkend="guint"><returnvalue>guint</returnvalue></link>               <link linkend="up-history-item-get-time">up_history_item_get_time</link>            (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-history-item-set-time">up_history_item_set_time</link>            (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> time</parameter>);
+<link linkend="UpDeviceState"><returnvalue>UpDeviceState</returnvalue></link>       <link linkend="up-history-item-get-state">up_history_item_get_state</link>           (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="up-history-item-set-state">up_history_item_set_state</link>           (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>,
+                                                         <parameter><link linkend="UpDeviceState"><type>UpDeviceState</type></link> state</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="UPower-up-history-item.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This object represents one item of data which may be returned from the
+daemon in response to a query.
+</para>
+<para>
+See also: <link linkend="UpDevice"><type>UpDevice</type></link>, <link linkend="UpClient"><type>UpClient</type></link>
+</para>
+</refsect1>
+<refsect1 id="UPower-up-history-item.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="UpHistoryItemPrivate" role="typedef">
+<title>UpHistoryItemPrivate</title>
+<indexterm zone="UpHistoryItemPrivate"><primary>UpHistoryItemPrivate</primary></indexterm>
+<programlisting>typedef struct UpHistoryItemPrivate UpHistoryItemPrivate;
+</programlisting>
+</refsect2>
+<refsect2 id="up-history-item-new" role="function" condition="since:0.9.0">
+<title>up_history_item_new ()</title>
+<indexterm zone="up-history-item-new" role="0.9.0"><primary>up_history_item_new</primary></indexterm>
+<programlisting><link linkend="UpHistoryItem"><returnvalue>UpHistoryItem</returnvalue></link> *     up_history_item_new                 (<parameter><type>void</type></parameter>);</programlisting>
+<variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new UpHistoryItem object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-history-item-get-value" role="function" condition="since:0.9.0">
+<title>up_history_item_get_value ()</title>
+<indexterm zone="up-history-item-get-value" role="0.9.0"><primary>up_history_item_get_value</primary></indexterm>
+<programlisting><link linkend="gdouble"><returnvalue>gdouble</returnvalue></link>             up_history_item_get_value           (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>);</programlisting>
+<para>
+Gets the item value.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-history-item-set-value" role="function" condition="since:0.9.0">
+<title>up_history_item_set_value ()</title>
+<indexterm zone="up-history-item-set-value" role="0.9.0"><primary>up_history_item_set_value</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_history_item_set_value           (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>,
+                                                         <parameter><link linkend="gdouble"><type>gdouble</type></link> value</parameter>);</programlisting>
+<para>
+Sets the item value.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-history-item-get-time" role="function" condition="since:0.9.0">
+<title>up_history_item_get_time ()</title>
+<indexterm zone="up-history-item-get-time" role="0.9.0"><primary>up_history_item_get_time</primary></indexterm>
+<programlisting><link linkend="guint"><returnvalue>guint</returnvalue></link>               up_history_item_get_time            (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>);</programlisting>
+<para>
+Gets the item time.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-history-item-set-time" role="function" condition="since:0.9.0">
+<title>up_history_item_set_time ()</title>
+<indexterm zone="up-history-item-set-time" role="0.9.0"><primary>up_history_item_set_time</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_history_item_set_time            (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> time</parameter>);</programlisting>
+<para>
+Sets the item time.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-history-item-get-state" role="function" condition="since:0.9.0">
+<title>up_history_item_get_state ()</title>
+<indexterm zone="up-history-item-get-state" role="0.9.0"><primary>up_history_item_get_state</primary></indexterm>
+<programlisting><link linkend="UpDeviceState"><returnvalue>UpDeviceState</returnvalue></link>       up_history_item_get_state           (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>);</programlisting>
+<para>
+Gets the item state.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-history-item-set-state" role="function" condition="since:0.9.0">
+<title>up_history_item_set_state ()</title>
+<indexterm zone="up-history-item-set-state" role="0.9.0"><primary>up_history_item_set_state</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                up_history_item_set_state           (<parameter><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link> *history_item</parameter>,
+                                                         <parameter><link linkend="UpDeviceState"><type>UpDeviceState</type></link> state</parameter>);</programlisting>
+<para>
+Sets the item state.
+</para><variablelist role="params">
+<varlistentry><term><parameter>history_item</parameter>&#160;:</term>
+<listitem><simpara><link linkend="UpHistoryItem"><type>UpHistoryItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>state</parameter>&#160;:</term>
+<listitem><simpara>the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+
+</refsect1>
+
+</refentry>

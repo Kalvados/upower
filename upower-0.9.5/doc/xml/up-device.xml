@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="UPower-up-device">
+<refmeta>
+<refentrytitle role="top_of_page" id="UPower-up-device.top_of_page">up-device</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  UPOWER Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>up-device</refname>
+<refpurpose>Client object for accessing information about UPower devices</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="UPower-up-device.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>#define             <link linkend="UP-DEVICE-ERROR:CAPS">UP_DEVICE_ERROR</link>
+#define             <link linkend="UP-DEVICE-TYPE-ERROR:CAPS">UP_DEVICE_TYPE_ERROR</link>
+                    <link linkend="UpDevicePrivate">UpDevicePrivate</link>;
+<link linkend="void"><returnvalue>void</returnvalue></link>                (<link linkend="changed">*changed</link>)                          (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);
+<link linkend="UpDevice"><returnvalue>UpDevice</returnvalue></link> *          <link linkend="up-device-new">up_device_new</link>                       (<parameter><type>void</type></parameter>);
+<link linkend="gchar"><returnvalue>gchar</returnvalue></link> *             <link linkend="up-device-to-text">up_device_to_text</link>                   (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-device-refresh-sync">up_device_refresh_sync</link>              (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            <link linkend="up-device-set-object-path-sync">up_device_set_object_path_sync</link>      (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *object_path</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link> *         <link linkend="up-device-get-history-sync">up_device_get_history_sync</link>          (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *type</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> timespec</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> resolution</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+<link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link> *         <link linkend="up-device-get-statistics-sync">up_device_get_statistics_sync</link>       (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *type</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);
+const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       <link linkend="up-device-get-object-path">up_device_get_object_path</link>           (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="UPower-up-device.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A helper GObject to use for accessing UPower devices, and to be notified
+when it is changed.
+</para>
+<para>
+See also: <link linkend="UpClient"><type>UpClient</type></link>
+</para>
+</refsect1>
+<refsect1 id="UPower-up-device.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="UP-DEVICE-ERROR:CAPS" role="macro">
+<title>UP_DEVICE_ERROR</title>
+<indexterm zone="UP-DEVICE-ERROR:CAPS"><primary>UP_DEVICE_ERROR</primary></indexterm>
+<programlisting>#define UP_DEVICE_ERROR		(up_device_error_quark ())
+</programlisting>
+</refsect2>
+<refsect2 id="UP-DEVICE-TYPE-ERROR:CAPS" role="macro">
+<title>UP_DEVICE_TYPE_ERROR</title>
+<indexterm zone="UP-DEVICE-TYPE-ERROR:CAPS"><primary>UP_DEVICE_TYPE_ERROR</primary></indexterm>
+<programlisting>#define UP_DEVICE_TYPE_ERROR&#160;(up_device_error_get_type ())
+</programlisting>
+</refsect2>
+<refsect2 id="UpDevicePrivate" role="struct">
+<title>UpDevicePrivate</title>
+<indexterm zone="UpDevicePrivate"><primary>UpDevicePrivate</primary></indexterm>
+<programlisting>typedef struct _UpDevicePrivate UpDevicePrivate;</programlisting>
+<para>
+Private <link linkend="PkDevice"><type>PkDevice</type></link> data
+</para></refsect2>
+<refsect2 id="changed" role="function">
+<title>changed ()</title>
+<indexterm zone="changed"><primary>changed</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                (*changed)                          (<parameter><link linkend="UpClient"><type>UpClient</type></link> *client</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="up-device-new" role="function" condition="since:0.9.0">
+<title>up_device_new ()</title>
+<indexterm zone="up-device-new" role="0.9.0"><primary>up_device_new</primary></indexterm>
+<programlisting><link linkend="UpDevice"><returnvalue>UpDevice</returnvalue></link> *          up_device_new                       (<parameter><type>void</type></parameter>);</programlisting>
+<para>
+Creates a new <link linkend="UpDevice"><type>UpDevice</type></link> object.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new UpDevice object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-to-text" role="function" condition="since:0.9.0">
+<title>up_device_to_text ()</title>
+<indexterm zone="up-device-to-text" role="0.9.0"><primary>up_device_to_text</primary></indexterm>
+<programlisting><link linkend="gchar"><returnvalue>gchar</returnvalue></link> *             up_device_to_text                   (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);</programlisting>
+<para>
+Converts the device to a string description.
+</para><variablelist role="params">
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpDevice"><type>UpDevice</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> text representation of <link linkend="UpDevice"><type>UpDevice</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-refresh-sync" role="function" condition="since:0.9.0">
+<title>up_device_refresh_sync ()</title>
+<indexterm zone="up-device-refresh-sync" role="0.9.0"><primary>up_device_refresh_sync</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_device_refresh_sync              (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Refreshes properties on the device.
+This function is normally not required.
+</para><variablelist role="params">
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpDevice"><type>UpDevice</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE:CAPS"><type>TRUE</type></link> for success, else <link linkend="FALSE:CAPS"><type>FALSE</type></link> and <parameter>error</parameter> is used
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-set-object-path-sync" role="function" condition="since:0.9.0">
+<title>up_device_set_object_path_sync ()</title>
+<indexterm zone="up-device-set-object-path-sync" role="0.9.0"><primary>up_device_set_object_path_sync</primary></indexterm>
+<programlisting><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>            up_device_set_object_path_sync      (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *object_path</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Sets the object path of the object and fills up initial properties.
+</para><variablelist role="params">
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpDevice"><type>UpDevice</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object_path</parameter>&#160;:</term>
+<listitem><simpara>The UPower object path.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE:CAPS"><type>TRUE</type></link> for success, else <link linkend="FALSE:CAPS"><type>FALSE</type></link> and <parameter>error</parameter> is used
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-get-history-sync" role="function" condition="since:0.9.0">
+<title>up_device_get_history_sync ()</title>
+<indexterm zone="up-device-get-history-sync" role="0.9.0"><primary>up_device_get_history_sync</primary></indexterm>
+<programlisting><link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link> *         up_device_get_history_sync          (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *type</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> timespec</parameter>,
+                                                         <parameter><link linkend="guint"><type>guint</type></link> resolution</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Gets the device history.
+</para><variablelist role="params">
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpDevice"><type>UpDevice</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara>The type of history, known values are "rate" and "charge".
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>timespec</parameter>&#160;:</term>
+<listitem><simpara>the amount of time to look back into time.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>resolution</parameter>&#160;:</term>
+<listitem><simpara>the resolution of data.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an array of <link linkend="UpHistoryItem"><type>UpHistoryItem</type></link>'s, else <link linkend="NULL:CAPS"><type>NULL</type></link> and <parameter>error</parameter> is used
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-get-statistics-sync" role="function" condition="since:0.9.0">
+<title>up_device_get_statistics_sync ()</title>
+<indexterm zone="up-device-get-statistics-sync" role="0.9.0"><primary>up_device_get_statistics_sync</primary></indexterm>
+<programlisting><link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link> *         up_device_get_statistics_sync       (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>,
+                                                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *type</parameter>,
+                                                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                                                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>
+Gets the device current statistics.
+</para><variablelist role="params">
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpDevice"><type>UpDevice</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara>the type of statistics.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an array of <link linkend="UpStatsItem"><type>UpStatsItem</type></link>'s, else <link linkend="NULL:CAPS"><type>NULL</type></link> and <parameter>error</parameter> is used
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+<refsect2 id="up-device-get-object-path" role="function" condition="since:0.9.0">
+<title>up_device_get_object_path ()</title>
+<indexterm zone="up-device-get-object-path" role="0.9.0"><primary>up_device_get_object_path</primary></indexterm>
+<programlisting>const <link linkend="gchar"><returnvalue>gchar</returnvalue></link> *       up_device_get_object_path           (<parameter><link linkend="UpDevice"><type>UpDevice</type></link> *device</parameter>);</programlisting>
+<para>
+Gets the object path for the device.
+</para><variablelist role="params">
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="UpDevice"><type>UpDevice</type></link> instance.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the object path, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.9.0</para></refsect2>
+
+</refsect1>
+
+</refentry>
